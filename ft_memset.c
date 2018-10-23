@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/23 16:36:47 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/23 15:13:30 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/23 16:33:26 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
+#include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memset(void *ptr, int x, size_t n)
+{
+	int		i;
+	char	*dup;
 
-#endif
+	i = 0;
+	while (n-- > 0)
+	{
+		dup = &ptr[i];
+		dup[0] = (unsigned char)x;
+		i++;
+	}
+	return (ptr);
+}
