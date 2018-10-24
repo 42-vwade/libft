@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/23 15:13:30 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/23 20:05:14 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/23 15:59:12 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/23 19:45:14 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
 	int		i;
-	char	*dup;
+	char	*tmp;
 
 	i = 0;
-	while (len-- > 0)
+	while (n-- > 0)
 	{
-		dup = &b[i];
-		dup[0] = (unsigned char)c;
+		tmp = &s[i];
+		tmp[0] = 0;
 		i++;
 	}
-	return (ptr);
 }
