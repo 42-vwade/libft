@@ -6,7 +6,7 @@
 /*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/25 15:54:19 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/25 16:52:28 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 void	*ft_memset(void *b, int c, size_t len);
