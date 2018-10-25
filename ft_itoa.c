@@ -6,7 +6,7 @@
 /*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:58:04 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/25 16:27:11 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/25 16:33:43 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_itoa(int n)
 	if ((str = (char *)malloc(len * sizeof(*str))))
 	{
 		str[--len] = 0;
-		while (--len)
+		while (len--)
 		{
 			tmp = (n < 0) ? -(n % 10) : n % 10;
 			str[len] = tmp + 48;
