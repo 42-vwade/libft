@@ -6,7 +6,7 @@
 /*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:58:04 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/23 23:00:47 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/25 15:48:18 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@ char	*ft_itoa(int n)
 {
 	int		len;
 	int		tmp;
-	int		base;
 	int		size;
 	char	*str;
 
 	len = 0;
-	base = 10;
 	size = ((unsigned int)n < 0x80000000) ? 2 : 3;
 	tmp = n;
-	while (tmp /= base)
+	while (tmp /= 10)
 		len++;
 	len += size;
 	if ((str = (char *)malloc(len * sizeof(*str))))
@@ -32,9 +30,9 @@ char	*ft_itoa(int n)
 		str[--len] = 0;
 		while (n)
 		{
-			tmp = (n < 0) ? -(n % base) : n % base;
+			tmp = (n < 0) ? -(n % 10) : n % 10;
 			str[--len] = tmp + 48;
-			n /= base;
+			n /= 10;
 		}
 		if (size == 3)
 			str[0] = '-';
