@@ -6,11 +6,11 @@
 /*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 10:54:25 by viwade            #+#    #+#             */
-/*   Updated: 2018/07/30 14:59:21 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/25 16:38:15 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int num;
 
