@@ -6,7 +6,7 @@
 /*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/26 21:39:41 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/26 21:42:17 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		ft_putstr(char const *s);
 int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
 void		*ft_memset(void *b, int c, size_t len);
-size_t		ft_strlen(const char s*);
+size_t		ft_strlen(const char *s);
 char		*ft_strdup(const char *s1);
 char		*ft_strcpy(char *dst, const char *src);
 char		*ft_strncpy(char *dst, const char *src, size_t len);
