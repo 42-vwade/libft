@@ -2,25 +2,26 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                    :+ +:+         +:+     */
+/*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 10:54:25 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/25 16:38:15 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/26 19:58:11 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(const char *str)
 {
-	int num;
+	int		num;
+	char	tmp;
 
 	num = 0;
-	while (*str > 0 && *str <= 32)
+	while ((*str > 0 && *str <= 32) || *str == 127)
 		str++;
-	if (*(str + 1) >= '0' && *(str + 1) <= '9')
-		if (*str == '-' || *str == '+')
-			return ((*str == '+') ? ft_atoi(++str) : -ft_atoi(++str));
+	tmp = *str;
+	if (*str == '-' || *str == '+')
+		str++;
 	while (*str && (*str >= '0' && *str <= '9'))
 		num = num * 10 + (*str++ - 48);
-	return (num);
+	return ((tmp == '-') ? -num : num);
 }
