@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 20:23:33 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/24 20:27:42 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/26 23:09:01 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_list	*ft_create_elem(void *data)
 	{
 		elem->data = data;
 		elem->next = null;
+		free(elem);
 	}
 	return (elem);
 }
