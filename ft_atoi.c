@@ -13,19 +13,18 @@
 int		ft_atoi(const char *str)
 {
 	int		num;
-	char	tmp;
+	char	neg;
 
 	num = 0;
-	if (str)
-	{
+	if (!str)
+		return (num);
 	while ((*str > 0 && *str <= 32) || *str == 127)
 		str++;
-	tmp = *str;
+	neg = *str;
 	if (*str == '-' || *str == '+')
 		str++;
 	while (*str >= '0' && *str <= '9')
 		num = num * 10 + (*str++ - 48);
-	num = (tmp == '-') ? -num : num;
-	}
+	num = (neg == '-') ? -num : num;
 	return (num);
 }

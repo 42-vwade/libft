@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:44:18 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/28 23:27:42 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/29 17:01:37 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <unistd.h>
 
 void	ft_putstr(char const *s)
 {
 	while (s && s[0])
-		ft_putchar((s++)[0]);
+		write(1, s++, 1);
 }
