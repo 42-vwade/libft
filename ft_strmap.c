@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 03:57:32 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/30 18:41:48 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/29 20:09:28 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/29 22:01:26 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
+#include "libft.h"
 
-char	*fn_strncat(char *dest, char *src, int nb)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char	*cpy;
+	char			*new;
+	unsigned int	i;
 
-	cpy = dest;
-	if (!dest || !src)
+	i = 0;
+	if (!s || !f)
 		return (NULL);
-	while (*dest)
-		dest++;
-	while (*src && nb-- > 0)
-		*dest = *src;
-	return (cpy);
+	if ((new = ft_strnew(ft_strlen(s))))
+		while (s[i++])
+			new[i - 1] = f(s[i - 1]);
+	return (new);
 }

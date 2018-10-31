@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 03:57:32 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/30 18:41:48 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/29 19:56:04 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/29 20:04:38 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*fn_strncat(char *dest, char *src, int nb)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	char	*cpy;
-
-	cpy = dest;
-	if (!dest || !src)
-		return (NULL);
-	while (*dest)
-		dest++;
-	while (*src && nb-- > 0)
-		*dest = *src;
-	return (cpy);
+	if (!s || !f)
+		return ;
+	while (s[0])
+		f(&((s++)[0]));
 }

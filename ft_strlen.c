@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 02:48:54 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/26 21:11:36 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/30 19:08:12 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+#include <string.h>
+
+size_t	ft_strlen(const char *s)
 {
-	int len;
+	size_t len;
 
 	len = 0;
-	while (str[len])
-		len++;
+	while (s[len++])
+		;
 	return (len);
 }

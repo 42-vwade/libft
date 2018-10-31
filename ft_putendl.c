@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 03:57:32 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/30 18:41:48 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/23 21:44:18 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/30 19:10:22 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <unistd.h>
+#include "libft.h"
 
-char	*fn_strncat(char *dest, char *src, int nb)
+void	ft_putendl(char const *s)
 {
-	char	*cpy;
+	write(1, s, ft_strlen(s));
+	write(1, "\n", 1);
+}
 
-	cpy = dest;
-	if (!dest || !src)
-		return (NULL);
-	while (*dest)
-		dest++;
-	while (*src && nb-- > 0)
-		*dest = *src;
-	return (cpy);
+int		main(int n, char **v){
+	int i;
+
+	i = 0;
+	if (n > 1)
+		while (++i < n)
+			ft_putendl(v[i]);
+	return (0);
 }

@@ -6,14 +6,14 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:44:18 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/29 17:01:37 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/30 18:35:33 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr(char const *s)
 {
-	while (s && s[0])
-		write(1, s++, 1);
+	write(1, s, ft_strlen(s));
 }

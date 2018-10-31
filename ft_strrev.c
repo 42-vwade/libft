@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
+/*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 03:57:32 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/30 18:41:48 by viwade           ###   ########.fr       */
+/*   Created: 2018/07/27 02:53:05 by viwade            #+#    #+#             */
+/*   Updated: 2018/07/27 03:46:37 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*fn_strncat(char *dest, char *src, int nb)
+char	*ft_strrev(char *str)
 {
-	char	*cpy;
+	int		len;
+	int		i;
+	char	tmp;
 
-	cpy = dest;
-	if (!dest || !src)
-		return (NULL);
-	while (*dest)
-		dest++;
-	while (*src && nb-- > 0)
-		*dest = *src;
-	return (cpy);
+	len = 0;
+	i = 0;
+	while (str[len])
+	{
+		len++;
+	}
+	while (i < (len / 2))
+	{
+		tmp = str[len - 1 - i];
+		str[len - 1 - i] = str[i];
+		str[i] = tmp;
+		i++;
+	}
+	return (str);
 }

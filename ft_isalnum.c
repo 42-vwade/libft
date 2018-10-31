@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 03:57:32 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/30 18:41:48 by viwade           ###   ########.fr       */
+/*   Created: 2018/07/31 02:20:13 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/29 17:38:46 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*fn_strncat(char *dest, char *src, int nb)
+int		ft_isalnum(int c)
 {
-	char	*cpy;
-
-	cpy = dest;
-	if (!dest || !src)
-		return (NULL);
-	while (*dest)
-		dest++;
-	while (*src && nb-- > 0)
-		*dest = *src;
-	return (cpy);
+	if (((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')\
+			|| ((unsigned char)c >= 'a' && (unsigned char)c <= 'z')\
+			|| ((unsigned char)c >= '0' && (unsigned char)c <= '9'))
+		return (1);
+	else
+		return (0);
 }
