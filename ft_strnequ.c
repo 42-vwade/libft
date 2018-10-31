@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/02 00:08:10 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 07:06:22 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/29 20:46:53 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/31 11:01:25 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	char	*len;
-	char	*dup;
+	size_t	i;
 
-	if (!src)
-		return (NULL);
-	len = (char *)src;
-	while (*len++)
-		;
-	if ((dup = (char *)malloc(sizeof(*dup) * (long int)(++len - src))))
-		return (ft_strcpy(dup, src));
-	else
-		return (NULL);
+	if (!(i = 0) && (!s1 || !s2))
+		return (0);
+	while (s1[i] && s2[i] && (s1[i] == s2[i]) && (i < n))
+		if (((i++ * 0) + 1))
+			if (!s1[i - 1] || !s2[i - 1])
+				return (0);
+	return ((s1[i] == s2[i]) ? 1 : 0);
 }

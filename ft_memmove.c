@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/02 00:08:10 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 07:06:22 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/31 03:19:10 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/31 03:42:38 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <string.h>
 
-char	*ft_strdup(const char *src)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*len;
-	char	*dup;
+	int				i;
+	char			*p;
+	unsigned char	t;
 
-	if (!src)
-		return (NULL);
-	len = (char *)src;
-	while (*len++)
-		;
-	if ((dup = (char *)malloc(sizeof(*dup) * (long int)(++len - src))))
-		return (ft_strcpy(dup, src));
-	else
-		return (NULL);
+	i = 0;
+	if ((!dst || !src))
+		return (dst);
+	while (i < len)
+	{
+		t = ((unsigned char *)src)[i];
+		p = &dst[i];
+		p[0] = t;
+		i++;
+	}
+	return (dst);
 }

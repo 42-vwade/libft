@@ -3,28 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 20:10:20 by viwade            #+#    #+#             */
-/*   Updated: 2018/07/30 21:56:42 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/31 10:24:16 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
-{
-	char *p[2];
+#include "libft.h"
 
-	p[0] = str;
-	p[1] = to_find;
-	if (!*to_find)
-		return (str);
-	while (*str)
-	{
-		to_find = p[1];
-		while (*to_find++ == *p[0]++)
-			if (!*to_find)
-				return (str);
-		p[0] = ++str;
-	}
+static	int	compare(const char *s, const char *q)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] == q[i])
+		if (!q[++i])
+			return (1);
 	return (0);
+}
+
+char		*ft_strstr(const char *s, const char *c)
+{
+	size_t	i;
+
+	i = 0;
+	if (!s || !c)
+		return ((char *)s);
+	while (s[i])
+		if (compare(&s[i++], c))
+			return ((char *)&s[i - 1]);
+	return ((c[0]) ? NULL : (char *)s);
 }

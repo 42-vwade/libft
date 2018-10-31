@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/02 00:08:10 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 07:06:22 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/31 11:02:07 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/31 11:11:39 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*len;
-	char	*dup;
+	size_t	len;
+	char	*new;
 
-	if (!src)
+	if (!s1 || !s2)
 		return (NULL);
-	len = (char *)src;
-	while (*len++)
-		;
-	if ((dup = (char *)malloc(sizeof(*dup) * (long int)(++len - src))))
-		return (ft_strcpy(dup, src));
-	else
-		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	if ((new = (char *)malloc(sizeof(*new) * len + 1)))
+		if ((new = ft_strcat(new, s1)))
+			if ((new = ft_strcat(new, s2)))
+				new[len] = 0;
+	return (new);
 }
+

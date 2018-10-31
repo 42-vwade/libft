@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 10:07:14 by viwade            #+#    #+#             */
-/*   Updated: 2018/07/26 10:08:06 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/31 08:09:15 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	wchar_t	w;
+
+	w = (wchar_t)c;
+	write(1, &w, 1);
 }

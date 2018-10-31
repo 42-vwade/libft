@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 13:38:07 by viwade            #+#    #+#             */
-/*   Updated: 2018/08/01 02:27:15 by viwade           ###   ########.fr       */
+/*   Updated: 2018/10/31 11:28:53 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	char				*cpy;
-	unsigned int		i;
-	unsigned int		len;
+#include "libft.h"
 
-	cpy = dest;
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	char	*cpy;
+	size_t	i;
+	size_t	len;
+
+	cpy = dst;
 	i = 0;
 	len = 0;
-	while (*(dest = cpy + len))
+	while (dst[len])
 		++len;
-	if (size > 0 && size > len && *src)
-		while (i < size - len - 1)
-			if (*dest++ = *src++)
-				i++;
+	if (dstsize > 0 && dstsize > len && *src)
+		while (i++ < dstsize - len - 1)
+			if ((dst[len + i - 1] = src[i - 1]))
+				;
 			else
-				*dest = '\0';
-	dest = cpy;
+				dst[i] = '\0';
 	return (len + i);
 }
-

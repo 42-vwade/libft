@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/02 00:08:10 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 07:06:22 by viwade           ###   ########.fr       */
+/*   Created: 2018/07/30 20:10:20 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/31 10:27:11 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+static	int	compare(const char *s, const char *q)
 {
-	char	*len;
-	char	*dup;
+	size_t	i;
 
-	if (!src)
-		return (NULL);
-	len = (char *)src;
-	while (*len++)
-		;
-	if ((dup = (char *)malloc(sizeof(*dup) * (long int)(++len - src))))
-		return (ft_strcpy(dup, src));
-	else
-		return (NULL);
+	i = 0;
+	while (s[i] == q[i])
+		if (!q[++i])
+			return (1);
+	return (0);
+}
+
+char		*ft_strnstr(const char *s, const char *c, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	if (!s || !c)
+		return ((char *)s);
+	while (s[i] && (i < len))
+		if (compare(&s[i++], c))
+			return ((char *)&s[i - 1]);
+	return ((c[0]) ? NULL : (char *)s);
 }

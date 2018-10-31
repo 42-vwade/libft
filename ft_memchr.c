@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/02 00:08:10 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 07:06:22 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/31 07:35:23 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <string.h>
 
-char	*ft_strdup(const char *src)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*len;
-	char	*dup;
+	size_t			i;
+	unsigned char	*p;
 
-	if (!src)
+	i = 0;
+	if (!s)
 		return (NULL);
-	len = (char *)src;
-	while (*len++)
-		;
-	if ((dup = (char *)malloc(sizeof(*dup) * (long int)(++len - src))))
-		return (ft_strcpy(dup, src));
-	else
-		return (NULL);
+	while (p[i] && (i < n))
+	{
+		p = &((unsigned char *)s)[i];
+		if ((unsigned char)c == p[0])
+			return ((void *)p);
+		i++;
+	}
+	return (NULL);
 }

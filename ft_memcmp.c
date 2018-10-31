@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/02 00:08:10 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 07:06:22 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/31 04:02:56 by viwade            #+#    #+#             */
+/*   Updated: 2018/10/31 07:35:20 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <string.h>
 
-char	*ft_strdup(const char *src)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*len;
-	char	*dup;
+	size_t			i;
+	unsigned char	*p1;
+	unsigned char	*p2;
 
-	if (!src)
-		return (NULL);
-	len = (char *)src;
-	while (*len++)
-		;
-	if ((dup = (char *)malloc(sizeof(*dup) * (long int)(++len - src))))
-		return (ft_strcpy(dup, src));
-	else
-		return (NULL);
+	i = 0;
+	if (!s1 || !s2)
+		return (0xFFFFFFFF);
+	while (i++ < n)
+	{
+		p1 = &((unsigned char *)s1)[i - 1];
+		p2 = &((unsigned char *)s2)[i - 1];
+		if (p1[0] != p2[0])
+			return (p1[0] - p2[0]);
+	}
+	return (0);
 }
