@@ -6,7 +6,7 @@
 #    By: viwade <viwade@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/01 22:12:50 by viwade            #+#    #+#              #
-#    Updated: 2018/11/02 03:51:24 by viwade           ###   ########.fr        #
+#    Updated: 2018/11/02 04:45:12 by viwade           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME =libft.a
 SRCDIR = ./
 HDRDIR = ./
 OBJDIR = objects/
-LIBDIR = lib/
+LIBDIR = ./
 CFILES = $(notdir $(wildcard *.c))
 HFILES = $(notdir $(wildcard *.h))
 CFLAGS := -Wall -Werror -Wextra
@@ -37,15 +37,11 @@ FM_MAG = \033[35m
 
 ####	UNDER THE HOOD	########################################################
 
-.PHONY: all re clean fclean test
+.PHONY: all re clean fclean
 
 all: $(NAME)
-	@echo "Executable $(FM_BOLD)$(FM_MAG)$(NAME)$(FM_NONE) created."
 
-$(NAME): $(LIB)
-	@$(CC) -g -o $@ -L$(LIBDIR) -lft
-
-$(LIB): $(OBJECTS)
+$(NAME): $(OBJECTS)
 	@$(AR) $@ $(OBJECTS)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c | build
@@ -53,18 +49,15 @@ $(OBJDIR)%.o: $(SRCDIR)%.c | build
 	@$(CC) -c $< -o $@
 
 build:
+ifeq (,$(OBJDIR))
 	@mkdir $(OBJDIR)
-	@mkdir $(LIBDIR)
-
-test: 
-	@$(CC) -g $(SOURCES) -I$(HDRDIR) -o $(NAME)-test
-	@lldb $(NAME)-test
-	@rm -rf $(NAME)-test*
+endif
+#@mkdir $(LIBDIR)
 
 clean:
 	@rm -rf $(OBJDIR)
 
 fclean: clean
-	@rm -rf $(LIBDIR) $(NAME)
+	@rm -rf $(LIB)
 
 re: fclean all
