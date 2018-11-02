@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 09:36:11 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/01 18:35:29 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/02 03:50:26 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	char	*new;
 
 	if (!s)

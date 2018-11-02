@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 07:35:23 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/02 03:42:57 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	if (!s)
 		return (NULL);
-	while (p[i] && (i < n))
+	while (i < n)
 	{
 		p = &((unsigned char *)s)[i];
 		if ((unsigned char)c == p[0])
