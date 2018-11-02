@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/30 08:55:29 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/01 19:29:08 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/01 19:07:14 by viwade            #+#    #+#             */
+/*   Updated: 2018/11/01 19:24:55 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
 
-void	ft_putnbr(int n)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	char	tmp;
-
-	tmp = 0;
-	if ((unsigned int)nb >= 0x80000000)
+	if ((unsigned int)fd != 0xFFFFFFFF)
 	{
-		ft_putchar('-');
-		ft_putnbr(-1 * (nb / 10));
-		tmp = (char)(-1 * (nb % 10) + 48);
-		write(1, &tmp, 1);
-		return ;
+		write(fd, s, ft_strlen(s));
+		write(fd, "\n", 1);
 	}
-	if (nb > 9)
-		ft_putnbr(nb / 10);
-	tmp = (char)((nb % 10) + 48);
-	write(1, &tmp, 1);
 }

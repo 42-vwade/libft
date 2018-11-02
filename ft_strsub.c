@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/30 08:55:29 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/01 19:29:08 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/01 09:36:11 by viwade            #+#    #+#             */
+/*   Updated: 2018/11/01 18:35:29 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+#include <stdlib.h>
 
-void	ft_putnbr(int n)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	tmp;
+	size_t	i;
+	char	*new;
 
-	tmp = 0;
-	if ((unsigned int)nb >= 0x80000000)
-	{
-		ft_putchar('-');
-		ft_putnbr(-1 * (nb / 10));
-		tmp = (char)(-1 * (nb % 10) + 48);
-		write(1, &tmp, 1);
-		return ;
-	}
-	if (nb > 9)
-		ft_putnbr(nb / 10);
-	tmp = (char)((nb % 10) + 48);
-	write(1, &tmp, 1);
+	if (!s)
+		return (NULL);
+	if ((new = ft_strnew(len + 1)))
+		ft_strncat(new, &s[start], len);
+	return (new);
 }
