@@ -6,24 +6,24 @@
 #    By: viwade <viwade@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/01 22:12:50 by viwade            #+#    #+#              #
-#    Updated: 2018/11/02 04:45:12 by viwade           ###   ########.fr        #
+#    Updated: 2018/11/02 05:42:18 by viwade           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ####	CONTROL PANEL	########################################################
 
-NAME =libft.a
-SRCDIR = ./
-HDRDIR = ./
-OBJDIR = objects/
-LIBDIR = ./
+NAME = libft.a
+SRCDIR = 
+HDRDIR = 
+OBJDIR =
+LIBDIR = 
 CFILES = $(notdir $(wildcard *.c))
 HFILES = $(notdir $(wildcard *.h))
 CFLAGS := -Wall -Werror -Wextra
 CFLAGS += -I$(HDRDIR)
 CC := gcc $(CFLAGS)
 AR = ar rcs
-LIB = $(addprefix $(LIBDIR), libft.a)
+LIB = $(addprefix $(LIBDIR), libar.a)
 SOURCES = $(addprefix $(SRCDIR), $(CFILES))
 OBJECTS = $(addprefix $(OBJDIR), $(CFILES:.c=.o))
 HEADERS = $(addprefix $(HDRDIR), $(HFILES))
@@ -41,21 +41,22 @@ FM_MAG = \033[35m
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	@$(AR) $@ $(OBJECTS)
+$(NAME): $(LIB)
+	@$(CC) -g -o $@ -L$(LIBDIR) -lar
 
-$(OBJDIR)%.o: $(SRCDIR)%.c | build
+$(LIB): $(OBJECTS)
+	@$(AR) $@ $(OBJECTS
+
+$(OBJDIR)%.o: $(SRCDIR)%.c
 	@echo "compiling $< into $@"
 	@$(CC) -c $< -o $@
 
-build:
-ifeq (,$(OBJDIR))
-	@mkdir $(OBJDIR)
-endif
+#build:
+#@mkdir -p $(OBJDIR)
 #@mkdir $(LIBDIR)
 
 clean:
-	@rm -rf $(OBJDIR)
+	@rm -rf $(OBJECTS)
 
 fclean: clean
 	@rm -rf $(LIB)
