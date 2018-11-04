@@ -6,13 +6,13 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 03:57:32 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/30 22:01:46 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/04 09:04:16 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*fn_strncat(char *dest, const char *src, int nb)
+char	*ft_strncat(char *dest, const char *src, int nb)
 {
 	int		i;
 	char	*cpy;
