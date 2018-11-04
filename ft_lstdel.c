@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/29 18:47:52 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/03 04:55:05 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/03 04:58:47 by viwade            #+#    #+#             */
+/*   Updated: 2018/11/03 05:11:10 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	if (!ap)
+	if (!alst || !del || !alst[0])
 		return ;
-	free(*ap);
-	*ap = NULL;
+	del(alst[0]->content,alst[0]->content_size);
+	while ((alst[0] = alst[0]->next))
+		del(alst[0]->content,alst[0]->content_size);
+	ft_memdel((void **)alst);
 }

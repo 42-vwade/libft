@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/29 18:47:52 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/03 04:55:05 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/03 04:36:46 by viwade            #+#    #+#             */
+/*   Updated: 2018/11/04 08:26:23 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	if (!ap)
+	if(!alst || !del)
 		return ;
-	free(*ap);
-	*ap = NULL;
+	del(alst[0]->content,alst[0]->content_size);
+	ft_memdel((void **)alst);
 }

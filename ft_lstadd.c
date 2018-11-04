@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/29 18:47:52 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/03 04:55:05 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/03 05:11:21 by viwade            #+#    #+#             */
+/*   Updated: 2018/11/04 08:26:54 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	if (!ap)
+	if (!alst || !new || !alst[0])
 		return ;
-	free(*ap);
-	*ap = NULL;
+	new->next = alst[0];
+	alst[0] = new;
 }

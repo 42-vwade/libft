@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/29 18:47:52 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/03 04:55:05 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/03 05:41:33 by viwade            #+#    #+#             */
+/*   Updated: 2018/11/03 05:45:07 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+void ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if (!ap)
+	if (!lst || !f)
 		return ;
-	free(*ap);
-	*ap = NULL;
+	f(lst);
+	while ((lst = lst->next))
+		f(lst);
 }
