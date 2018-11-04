@@ -6,13 +6,13 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 05:41:33 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/03 05:45:07 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/04 08:45:22 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	if (!lst || !f)
 		return ;

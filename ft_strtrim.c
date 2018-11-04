@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 09:46:53 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/01 10:19:07 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/04 08:46:50 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	is_whitespace(char c)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	unsigned int	start;
 	size_t			len;

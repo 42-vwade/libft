@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 11:02:07 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 11:11:39 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/04 08:46:35 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 				new[len] = 0;
 	return (new);
 }
-
