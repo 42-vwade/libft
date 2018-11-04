@@ -6,14 +6,14 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 10:54:25 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/04 08:42:22 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/04 09:56:01 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(const char *str)
 {
-	int		num;
-	char	neg;
+	long long int	num;
+	char			neg;
 
 	num = 0;
 	if (!str)
