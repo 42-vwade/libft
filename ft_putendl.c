@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:44:18 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/04 08:47:06 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/04 11:04:00 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void	ft_putendl(char const *s)
 {
-	write(1, s, ft_strlen(s));
+	if (s)
+		write(1, s, ft_strlen(s));
 	write(1, "\n", 1);
 }

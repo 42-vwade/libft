@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 10:54:25 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/04 09:56:01 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/04 10:42:32 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ int		ft_atoi(const char *str)
 		return (num);
 	while ((*str > 0 && *str <= 32) || *str == 127)
 		str++;
-	neg = *str;
-	if (*str == '-' || *str == '+')
-		str++;
+	neg = (str += (*str == '-' || *str == '+') ? 1 : 0)[-1];
 	while (*str >= '0' && *str <= '9')
 		num = num * 10 + (*str++ - 48);
-	num = (neg == '-') ? -num : num;
-	return (num);
+	return ((neg == '-') ? -num : num);
 }
