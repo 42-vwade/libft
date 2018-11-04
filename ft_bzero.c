@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 15:59:12 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/29 12:00:37 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/04 08:59:53 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	ft_bzero(void *s, size_t n)
 	char	*tmp;
 
 	i = 0;
-	if (!s)
-		return ;
-	while (n-- > 0)
+	while (i < n)
 	{
 		tmp = &s[i];
 		tmp[0] = 0;
