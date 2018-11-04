@@ -68,7 +68,7 @@ HFILES = libft.h
 CFLAGS := -c -Wall -Werror -Wextra
 CFLAGS += -I$(HDRDIR) -v
 CC := gcc 
-AR = ar rcs
+AR = ar rc
 LIB = $(addprefix $(LIBDIR), libft.a)
 SOURCES = $(addprefix $(SRCDIR), $(CFILES))
 OBJECTS = $(addprefix $(OBJDIR), $(CFILES:%.c=%.o))
@@ -90,7 +90,7 @@ ifeq (,$(DEBUG))
 endif
 
 $(NAME): $(OBJECTS)
-	@$(AR) $@ $<
+	@$(AR) $@ *.o
 	@ranlib $@
 
 $(OBJECTS): $(SOURCES)
