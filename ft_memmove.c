@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 03:19:10 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/02 03:45:09 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/05 09:04:40 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	if ((!dst || !src))
 		return (dst);
-	while (i < len)
+	while (len-- > 0)
 	{
 		t = ((unsigned char *)src)[i];
 		p = &dst[i];

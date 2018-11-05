@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_lst2arr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 03:57:32 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/05 08:28:22 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/05 03:58:52 by viwade            #+#    #+#             */
+/*   Updated: 2018/11/05 04:26:12 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+#include <stdlib.h>
 
-char	*ft_strncat(char *dest, const char *src, size_t nb)
+void	**ft_lst2arr(t_list *lst)
 {
 	size_t	i;
-	char	*cpy;
+	size_t	n;
+	void	**arr;
 
+	if (!lst)
+		return (NULL);
 	i = 0;
-	if (!dest || !src)
-		return (dest);
-	cpy = dest;
-	while (*dest)
-		dest++;
-	while (src[i++] && nb-- > 0)
-		dest[i - 1] = src[i - 1];
-	return (cpy);
+	n = ft_lstsize(lst);
+	if ((arr = (void **)malloc(sizeof(*arr) * n)))
+		while (lst)
+		{
+			arr[i++] = lst->content;
+			lst = lst->next;
+		}
+	return (arr);
 }
