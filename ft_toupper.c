@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 02:20:13 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/29 17:50:41 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/05 03:32:21 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_toupper(int c)
 {
-	if ((unsigned char)c >= 'a' && (unsigned char)c <= 'z')
+	if (((unsigned char)c >= 'a' && (unsigned char)c <= 'z') && (c < 255))
 		return (c - 32);
 	else
 		return (c);
