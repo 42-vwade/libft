@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 19:07:14 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/01 19:24:55 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/06 17:16:29 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putendl_fd(char const *s, int fd)
 {
 	if ((unsigned int)fd != 0xFFFFFFFF)
 	{
-		write(fd, s, ft_strlen(s));
-		write(fd, "\n", 1);
+		write(fd, ft_strjoin(s, "\n"), ft_strlen(s) + 1);
+		//write(fd, "\n", 1);
 	}
 }
