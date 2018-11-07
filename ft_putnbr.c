@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 08:55:29 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/06 15:52:43 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/06 16:49:15 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,8 @@
 
 void	ft_putnbr(int n)
 {
-	ft_putstr(ft_itoa(n));
+	char	*c;
+
+	ft_putstr(c = ft_itoa(n));
+	ft_strdel(&c);
 }
