@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 02:20:13 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/29 12:54:23 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 09:47:52 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@ int		ft_isalpha(int c)
 {
 	unsigned char a;
 
+	if ((unsigned)c > 0x100)
+		return (0);
 	a = (unsigned char)c;
 	if ((a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z'))
 		return (1);
