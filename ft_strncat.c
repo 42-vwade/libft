@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 03:57:32 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/07 07:28:16 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/08 16:41:17 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-	size_t	s;
+	char	*p;
 
-	i = 0;
-	s = ft_strlen(s1);
-	while (i < n && (s2[i]))
-	{
-		s1[s] = s2[i];
-		s++;
-		i++;
-	}
-	s1[s] = 0;
-	return (s1);
+	p = s1;
+	s1 += ft_strlen(s1);
+	while ((s1[0] = s2[0]) && n--)
+		if (!*++s1 || !*++s2)
+			break;
+	s1[0] = 0;
+	return (p);
 }
