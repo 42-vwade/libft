@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/29 20:46:53 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/05 08:47:23 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/08 17:09:07 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t	i;
-
-	if (!(i = 0) && (!s1 || !s2))
+	if (!s1 || !s2)
 		return (0);
-	while (s1[i] == s2[i] && (n-- > 0) && (s1[i] && s2[i]))
-		i++;
-	return ((s1[i] == s2[i]) ? 1 : 0);
+	while (*s1 == *s2 && n--)
+		if (!++s1 || !++s2)
+			break ;
+	return ((s1[0] == s2[0]) ? 1 : 0);
 }
