@@ -6,13 +6,14 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 02:20:13 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/29 17:26:05 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 10:02:48 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isdigit(int c)
 {
-	if (((unsigned char)c >= '0' && (unsigned char)c <= '9'))
+	if ((unsigned)c < 0x100 &&\
+		(((unsigned char)c >= '0' && (unsigned char)c <= '9')))
 		return (1);
 	else
 		return (0);
