@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/05 03:58:52 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/05 04:26:12 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/10 11:12:48 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	**ft_lst2arr(t_list *lst)
 	if (!lst)
 		return (NULL);
 	i = 0;
-	n = ft_lstsize(lst);
+	n = ft_lstlen(lst);
 	if ((arr = (void **)malloc(sizeof(*arr) * n)))
 		while (lst)
 		{
