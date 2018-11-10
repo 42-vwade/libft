@@ -6,18 +6,18 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 21:32:23 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/09 21:04:29 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 21:05:05 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-static	int
-	valid(int c)
-{
-	return ((unsigned)c < 0x100 || (unsigned)c == 0xFFFFFFFF);
-}
+// static	int
+// 	valid(int c)
+// {
+// 	return ((unsigned)c < 0x100 || (unsigned)c == 0xFFFFFFFF);
+// }
 
 static	char
 	*search(char *s, char c)
