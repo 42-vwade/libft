@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 15:13:30 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/29 19:30:03 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 20:20:01 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	char	*dup;
 
 	i = 0;
-	while (len-- > 0 && b)
+	while (len--)
 	{
 		dup = &b[i];
 		dup[0] = (unsigned char)c;
