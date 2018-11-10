@@ -6,25 +6,46 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 21:32:23 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/29 12:55:21 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 21:01:06 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+static	int
+	valid(int c)
 {
-	int		i;
-	char	*tmp;
+	return ((unsigned)c < 0x100 || (unsigned)c == 0xFFFFFFFF);
+}
+
+static	char
+	*search(char *s, char c)
+{
+	size_t	i;
 
 	i = 0;
-	while (n-- > 0 && (src && dst))
-		if (((unsigned char *)src)[i] == (unsigned char)c)
-			return (&dst[i]);
+	while (s[i])
+		if (s[i] == c)
+			return (&s[i]);
 		else
-		{
-			tmp = &dst[i];
-			tmp[0] = ((unsigned char *)src)[i++];
-		}
+			i++;
+	return (NULL);
+}
+
+void
+	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	int		i;
+	char	a;
+	char	*tmp;
+
+	if (!valid(c))
+		return (NULL);
+	i = 0;
+	a = (unsigned char)c;
+	if (search((char *)src, (unsigned char)c))
+		return (search((char *)dst, (unsigned char)c));
+	ft_memcpy(dst, src, n);
 	return (NULL);
 }
