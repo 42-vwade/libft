@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 15:01:08 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/10 10:59:27 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/10 11:38:35 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strcpy(char *dest, const char *src)
 
 	cpy = dest;
 	if (!dest || !src)
-		ft_die("KILL(ft_strcpy): Cannot copy. Parameters invalid.");
+		ft_die("FT_STRCPY: Died.");
 	while ((*dest++ = *src++))
 		;
 	return (cpy);
