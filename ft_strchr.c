@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/09 21:15:08 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 21:23:34 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)p);
 		i++;
 	}
-	return (NULL);
+	p = &((unsigned char *)s)[i];
+	return ((*p == (unsigned char)c) ? (char *)p : NULL);
 }
