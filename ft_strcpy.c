@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 15:01:08 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/29 13:04:16 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 21:13:34 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@ char	*ft_strcpy(char *dest, const char *src)
 	char	*cpy;
 
 	cpy = dest;
-	if (src && dest)
-		while ((*(dest++) = *(src++)))
-			;
+	while ((*(dest++) = *(src++)))
+		;
 	return (cpy);
 }

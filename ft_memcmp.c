@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 04:02:56 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 07:35:20 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 21:09:39 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*p2;
 
 	i = 0;
-	if (!s1 || !s2)
-		return (0xFFFFFFFF);
 	while (i++ < n)
 	{
 		p1 = &((unsigned char *)s1)[i - 1];

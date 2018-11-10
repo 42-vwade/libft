@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 03:19:10 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/09 17:21:02 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 21:09:57 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void
 	unsigned char	t;
 
 	i = 0;
-	if ((!dst || !src))
-		return (dst);
 	if (src < dst)
 		while (len--)
 		{
