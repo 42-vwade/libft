@@ -6,14 +6,15 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 02:20:13 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/09 09:57:32 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 20:07:13 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isascii(int c)
+int
+	ft_isascii(int c)
 {
 	if ((unsigned int)c < 0x100)
-		return (1);
-	else
-		return (0);
+		if ((unsigned char)c >= 0 && (unsigned char)c <= 127)
+			return (1);
+	return (0);
 }
