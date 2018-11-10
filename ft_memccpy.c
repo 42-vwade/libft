@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 21:32:23 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/09 21:02:21 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 21:04:29 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ static	char
 void
 	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	if (!valid(c))
-		return (NULL);
+	//if (!valid(c))		return (NULL);
 	if (search((char *)src, (unsigned char)c))
 		return (search((char *)dst, (unsigned char)c));
 	ft_memcpy(dst, src, n);
