@@ -6,14 +6,15 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 08:55:29 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/06 16:49:15 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 17:21:50 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void
+	ft_putnbr(int n)
 {
 	char	*c;
 

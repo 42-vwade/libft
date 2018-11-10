@@ -6,13 +6,14 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 03:19:10 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/08 18:03:07 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 17:21:02 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void
+	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t			i;
 	char			*p;
