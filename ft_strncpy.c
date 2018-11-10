@@ -6,21 +6,25 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 15:46:08 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/09 17:22:19 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/10 11:25:13 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char
-	*ft_strncpy(char *dest, char *src, unsigned int n)
+	*ft_strncpy(char *dst, const char *src, size_t n)
 {
 	char *cpy;
 
-	cpy = dest;
-	while (n-- > 0)
+	cpy = dst;
+	if (!dst || !src)
+		ft_die("FT_STRCAT: Cannot concatenate. Parameters invalid.");
+	while (n--)
 		if (!*src)
-			while (*dest)
-				*dest++ = '\0';
+			while (*dst)
+				*dst++ = '\0';
 		else
-			*dest++ = *src++;
+			*dst++ = *src++;
 	return (cpy);
 }
