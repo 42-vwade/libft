@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_die.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/10 10:42:51 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/10 10:30:37 by viwade            #+#    #+#             */
+/*   Updated: 2018/11/10 10:42:26 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
+#include <unistd.h>
 
-char	*ft_strchr(const char *s, int c)
+void
+	ft_die(const char *message)
 {
-	int				i;
-	unsigned char	*p;
-
-	i = 0;
-	if (!s)
-		ft_die("String parameter invalid.");
-	while (s[i])
-	{
-		p = &((unsigned char *)s)[i];
-		if ((unsigned char)c == p[0])
-			return ((char *)p);
-		i++;
-	}
-	p = &((unsigned char *)s)[i];
-	return ((*p == (unsigned char)c) ? (char *)p : NULL);
+	if (!message || !message[0])
+		write(1, "Invalid error message.\n", 23);
+	else
+		ft_putendl(message);
 }
