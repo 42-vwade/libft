@@ -64,6 +64,7 @@ CFILES = ./ft_bzero.c \
 ./ft_lstadd.c \
 ./ft_lstiter.c \
 ./ft_lstmap.c
+CFILES = $(notdir $(wildcard *.c))
 HFILES = libft.h
 CFLAGS := -c -Wall -Werror -Wextra
 CFLAGS += -I$(HDRDIR) -v
