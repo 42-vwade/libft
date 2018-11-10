@@ -6,14 +6,14 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 02:20:13 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/04 08:43:48 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/09 20:16:33 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isprint(int c)
 {
-	if ((unsigned char)c >= 32 && (unsigned char)c < 127)
-		return (1);
-	else
-		return (0);
+	if ((unsigned)c < 0x100 || c == 0xFFFFFFFF)
+		if ((unsigned char)c >= 32 && (unsigned char)c < 127)
+			return (1);
+	return (0);
 }
