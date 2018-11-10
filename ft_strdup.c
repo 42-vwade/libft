@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 00:08:10 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/09 21:13:13 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/10 10:55:57 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 
 char	*ft_strdup(const char *src)
 {
-	char	*len;
+	size_t	len;
 	char	*dup;
 
-	len = (char *)src;
-	while (*len++)
-		;
-	if ((dup = (char *)malloc(sizeof(*dup) * (long long int)(++len - src))))
+	len = ft_strlen(src);
+	if ((dup = (char *)malloc(sizeof(*dup) * (len + 1))))
 		return (ft_strcpy(dup, src));
 	else
 		return (NULL);

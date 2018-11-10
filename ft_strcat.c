@@ -6,9 +6,11 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 03:32:00 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/09 21:15:30 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/10 10:47:18 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcat(char *dest, const char *src)
 {
@@ -16,6 +18,8 @@ char	*ft_strcat(char *dest, const char *src)
 	char	*dup;
 
 	i = 0;
+	if (!dest || !src)
+		ft_die("Cannot concatenate. Parameters invalid.");
 	dup = dest;
 	while (*dup)
 		dup++;
