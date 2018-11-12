@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 09:46:53 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/05 12:56:52 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/10 15:01:50 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,21 @@ static int	is_whitespace(char c)
 
 char		*ft_strtrim(char const *s)
 {
-	unsigned int	start;
-	size_t			len;
-	char			*new;
+	size_t	start;
+	size_t	len;
+	char	*new;
 
 	if (!s)
 		return (NULL);
 	start = 0;
 	len = ft_strlen(s);
-	while (is_whitespace(s[start]) && s[start])
+	while (is_whitespace(s[start]))
 		start++;
-	while (is_whitespace(s[len - 1]) && (len > start))
-		len--;
+	if (len)
+		while (is_whitespace(s[len - 1]) && (start < len))
+			len--;
 	if (start < len)
-		if ((new = ft_strsub(s, start, len)))
+		if ((new = ft_strsub(s, start, len + 1)))
 			return (new);
 	return (NULL);
 }

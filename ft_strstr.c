@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 20:10:20 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 10:24:16 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/11 13:36:33 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ char		*ft_strstr(const char *s, const char *c)
 
 	i = 0;
 	if (!s || !c)
-		return ((char *)s);
+		ft_die("");
 	while (s[i])
-		if (compare(&s[i++], c))
-			return ((char *)&s[i - 1]);
+		if (s[i++] == c[0])
+			if (compare(&s[i - 1], c))
+				return ((char *)&s[i - 1]);
 	return ((c[0]) ? NULL : (char *)s);
 }

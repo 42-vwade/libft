@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 13:38:07 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 11:46:03 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/10 21:26:45 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,17 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
+	size_t	n;
 	size_t	len;
 
 	i = 0;
-	len = 0;
 	if (!dst || !src)
-		return (0);
-	while (dst[len])
-		++len;
-	if (dstsize > 0 && dstsize > len)
-		while (src[i] && (i < dstsize - len - 1))
-			if ((dst[len + i] = src[i]))
-				i++;
-	dst[len + i] = '\0';
-	return (len + i);
+		ft_die("");
+	if (!dstsize || (dstsize <= (len = ft_strlen(dst))))
+		return (ft_strlen(src) + dstsize);
+	n = dstsize - len - 1;
+	while ((dst[len + i] = src[i]) && n--)
+		i++;
+	dst[len + i] = 0;
+	return (len + ft_strlen(src));
 }

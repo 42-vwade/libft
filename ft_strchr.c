@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/10 10:47:40 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/11 13:45:43 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*p;
 
 	i = 0;
 	if (!s)
-		ft_die("String parameter is invalid.");
+		ft_die("");
 	while (s[i])
 	{
 		p = &((unsigned char *)s)[i];

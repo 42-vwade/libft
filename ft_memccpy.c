@@ -6,39 +6,19 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 21:32:23 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/09 21:05:05 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/10 14:22:04 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-// static	int
-// 	valid(int c)
-// {
-// 	return ((unsigned)c < 0x100 || (unsigned)c == 0xFFFFFFFF);
-// }
-
-static	char
-	*search(char *s, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		if (s[i] == c)
-			return (&s[i]);
-		else
-			i++;
-	return (NULL);
-}
-
 void
 	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	//if (!valid(c))		return (NULL);
-	if (search((char *)src, (unsigned char)c))
-		return (search((char *)dst, (unsigned char)c));
-	ft_memcpy(dst, src, n);
+	while (n--)
+		if ((*((unsigned char *)dst++) = *((unsigned char *)src++))\
+				== (unsigned char)c)
+			return (dst);
 	return (NULL);
 }
