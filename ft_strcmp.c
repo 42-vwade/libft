@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 22:00:06 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/10 11:01:22 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/12 14:58:59 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_strcmp(const char *s1, const char *s2)
 {
 	if (!s1 || !s2)
-		ft_die("KILL(ft_strcmp): Cannot compare. Parameters invalid.");
+		ft_die("");
 	while (*s1 == *s2)
 		if (!*s1++ || !*s2++)
 			return (0);
