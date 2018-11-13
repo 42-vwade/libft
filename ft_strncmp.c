@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 23:49:16 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/13 13:19:24 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/13 13:20:26 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int
 			break ;
 		else
 			i++;
-	return ((unsigned int)(s1[i] - s2[i]));
+	return ((unsigned char)(s1[i] - s2[i]));
 }
