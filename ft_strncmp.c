@@ -6,15 +6,22 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 23:49:16 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/13 12:52:30 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/13 13:10:02 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int
 	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	while (*s1 == *s2 && n--)
-		if (!*s1++ || !*s2++)
-			break ;
-	return (*(const unsigned char *)s1 - *(const unsigned char *)s2);
+	int		i;
+
+	i = 0;
+	while (n-- && s1[i] == s2[i])
+		if (!s1[i] && !s2[i])
+			return (0);
+		else if (!s1[i] || !s2[i])
+			return ((s1)[i] - (s2)[i]);
+		else
+			i++;
+	return (0);
 }
