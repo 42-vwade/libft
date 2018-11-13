@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 23:49:16 by viwade            #+#    #+#             */
-/*   Updated: 2018/07/31 00:14:41 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/13 12:52:30 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int
+	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	while (*s1 == *s2 && n-- > 1)
+	while (*s1 == *s2 && n--)
 		if (!*s1++ || !*s2++)
-			return (0);
+			break ;
 	return (*(const unsigned char *)s1 - *(const unsigned char *)s2);
 }
