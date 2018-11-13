@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 10:19:49 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/02 03:49:59 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/13 00:09:22 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,17 @@ char			**ft_strsplit(char const *s, char c)
 	i = 0;
 	j = 0;
 	w = words(s, c);
-	if ((list = (char **)malloc(sizeof(*list) * w)))
-		while (j < w && !(len = 0))
+	if ((list = (char **)malloc(sizeof(*list) * w + 1)))
+		while (!(len = 0) && j < w)
 		{
-			while (s[i] == c && s[i])
+			while (s[i] == c)
 				i++;
-			while (s[i++] != c && s[i])
+			while (s[i] != c && s[i])
 				len++;
 			if (!(list[j] = ft_strsub(s, i, len)))
 				return (NULL);
 			j++;
 		}
+	list[w] = NULL;
 	return (list);
 }
