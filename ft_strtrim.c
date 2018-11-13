@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 09:46:53 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/10 15:01:50 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/12 20:12:32 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ char		*ft_strtrim(char const *s)
 	if (len)
 		while (is_whitespace(s[len - 1]) && (start < len))
 			len--;
-	if (start < len)
-		if ((new = ft_strsub(s, start, len + 1)))
+	if (start <= len)
+		if ((new = ft_strsub(s, start, len - start)))
 			return (new);
 	return (NULL);
 }
