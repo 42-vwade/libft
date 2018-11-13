@@ -6,17 +6,32 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 19:25:34 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/01 19:31:00 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/13 12:48:37 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+void
+	ft_putnbr_fd(int n, int fd)
 {
-	char	*s;
+	int		len;
+	int		tmp;
+	char	c;
 
-	if ((s = ft_itoa(n)) && !(fd == -1))
-		write(fd, s, ft_strlen(s));
+	fd = 1;
+	tmp = n;
+	len = 1;
+	if ((unsigned)n >= 0x80000000)
+		write(fd, "-", 1);
+	while (tmp /= 10)
+		len *= 10;
+	while (len)
+	{
+		c = ((n < 0) ? -(n / len) : n / len) + 48;
+		write(fd, &c, 1);
+		n %= len;
+		len /= 10;
+	}
 }
