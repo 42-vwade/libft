@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 10:19:49 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/13 18:54:17 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/13 18:56:36 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ char			**ft_strsplit(char const *s, char c)
 			i += len;
 			j++;
 		}
-	list[w] = (void *)0;
+	list[w] = NULL;
 	return (list);
 }
