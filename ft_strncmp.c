@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 23:49:16 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/13 15:58:43 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/13 16:08:08 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int
 			return (0);
 		else if (!s1[i] || !s2[i])
 			break ;
+		else if (!n)
+			return (0);
 		else
 			i++;
 	return ((unsigned char)(s1[i] - s2[i]));
