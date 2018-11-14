@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/10 10:37:44 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/13 19:26:27 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ size_t				ft_lstlen(t_list *lst);
 void				**ft_lst2arr(t_list *lst);
 
 void				ft_die(const char *message);
+size_t				ft_arrlen(char **ar);
 
 #endif
