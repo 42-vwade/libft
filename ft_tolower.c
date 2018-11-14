@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/31 02:20:13 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/05 03:32:43 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/13 19:17:35 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_tolower(int c)
 {
-	if (((unsigned char)c >= 'A' && (unsigned char)c <= 'Z') && (c < 255))
+	if (((unsigned char)c >= 'A' && (unsigned char)c <= 'Z') && (c < 0x100))
 		return (c + 32);
 	else
 		return (c);
