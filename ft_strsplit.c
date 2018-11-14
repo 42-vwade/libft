@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 10:19:49 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/13 00:09:22 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/13 16:34:09 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char			**ft_strsplit(char const *s, char c)
 				i++;
 			while (s[i] != c && s[i])
 				len++;
-			if (!(list[j] = ft_strsub(s, i, len)))
+			if (!(list[j] = ft_strsub(s, i, ++len)))
 				return (NULL);
 			j++;
 		}
