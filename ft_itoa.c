@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viwade <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:58:04 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/28 15:53:22 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/14 17:29:49 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ char	*ft_itoa(int n)
 	while (tmp /= 10)
 		len++;
 	len += size;
-	if ((str = (char *)malloc(len-- * sizeof(*str))))
+	if ((str = (char *)malloc(len * sizeof(*str))))
 	{
+		str[len--] = 0;
 		while (len--)
 		{
 			tmp = (n < 0) ? -(n % 10) : n % 10;
