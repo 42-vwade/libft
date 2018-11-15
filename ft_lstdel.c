@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/03 04:58:47 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/15 01:02:23 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/15 01:12:36 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	if (!alst || !del || !alst[0])
+	if (!alst || !del)
 		return ;
-	del(alst[0]->content, alst[0]->content_size);
-	while ((alst[0] = alst[0]->next))
-		del(alst[0]->content, alst[0]->content_size);
-	free(*alst);
-	alst[0] = NULL;
+	ft_lstdel(&(alst[0]->next), del);
+	ft_lstdelone(alst, del);
 }
