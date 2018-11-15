@@ -6,10 +6,11 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:58:04 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/14 17:29:49 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/14 22:52:41 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_itoa(int n)
@@ -27,7 +28,10 @@ char	*ft_itoa(int n)
 	len += size;
 	if ((str = (char *)malloc(len * sizeof(*str))))
 	{
-		str[len--] = 0;
+			ft_memset(str, 'a', len);
+			ft_putchar(str[len]);
+			str[--len] = 0;
+			ft_putstr(str);
 		while (len--)
 		{
 			tmp = (n < 0) ? -(n % 10) : n % 10;
