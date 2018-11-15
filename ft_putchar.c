@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 10:07:14 by viwade            #+#    #+#             */
-/*   Updated: 2018/10/31 08:09:15 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/14 23:07:31 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	ft_putchar(char c)
 {
-	wchar_t	w;
+	long long int	w;
 
-	w = (wchar_t)c;
+	w = (long long)c;
 	write(1, &w, 1);
 }
