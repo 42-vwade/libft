@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 10:19:49 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/13 20:01:09 by viwade           ###   ########.fr       */
+/*   Updated: 2018/11/14 16:52:30 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static size_t	words(char const *s, char c)
 	i = 0;
 	w = 0;
 	while (s[i])
-		if ((s[i] != c) && (w += (s[i] != c)))
+		if ((s[i] != c) && (w += (s[i] != c && s[i])))
 			while (s[i] != c)
 				i++;
 		else
