@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/18 13:44:55 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/05 04:00:04 by viwade            #+#    #+#             */
+/*   Updated: 2019/01/29 19:58:45 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_lstlen(t_list *list)
 {
-	size_t	i;
-	char	*ptr;
+	size_t	len;
 
-	i = 0;
-	if (!s)
-		ft_error("");
-	while (s[i])
-	{
-		ptr = (char *)&s[i];
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
-	}
-	return ((s[i] == (char)c) ? (char *)&s[i] : NULL);
+	if (!list)
+		return (0);
+	len = 1;
+	while (list)
+		len += (list = list->next) ? 1 : 0;
+	return (len);
 }

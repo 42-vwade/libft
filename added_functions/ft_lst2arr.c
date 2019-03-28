@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lst2arr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/18 13:44:55 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/05 03:58:52 by viwade            #+#    #+#             */
+/*   Updated: 2019/01/29 19:58:44 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "../libft.h"
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+void	**ft_lst2arr(t_list *lst)
 {
 	size_t	i;
-	char	*ptr;
+	size_t	n;
+	void	**arr;
 
+	if (!lst)
+		return (NULL);
 	i = 0;
-	if (!s)
-		ft_error("");
-	while (s[i])
-	{
-		ptr = (char *)&s[i];
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
-	}
-	return ((s[i] == (char)c) ? (char *)&s[i] : NULL);
+	n = ft_lstlen(lst);
+	if ((arr = (void **)malloc(sizeof(*arr) * n)))
+		while (lst)
+		{
+			arr[i++] = lst->content;
+			lst = lst->next;
+		}
+	return (arr);
 }

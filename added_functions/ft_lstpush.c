@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstpush.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/18 13:44:55 by viwade           ###   ########.fr       */
+/*   Created: 2019/01/15 06:17:09 by viwade            #+#    #+#             */
+/*   Updated: 2019/01/29 19:58:48 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void
+	ft_lstpush(t_list **list, t_list *new)
 {
-	size_t	i;
-	char	*ptr;
+	t_list	*push;
 
-	i = 0;
-	if (!s)
-		ft_error("");
-	while (s[i])
+	if (!list[0])
 	{
-		ptr = (char *)&s[i];
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
+		list[0] = new;
+		return ;
 	}
-	return ((s[i] == (char)c) ? (char *)&s[i] : NULL);
+	push = list[0];
+	while ((push->next))
+		push = push->next;
+	if (!push->content)
+	{
+		ft_lstdelone(list, ft_del);
+		push = new;
+	}
+	else
+		push->next = new;
 }

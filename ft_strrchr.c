@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/12 15:48:58 by viwade           ###   ########.fr       */
+/*   Updated: 2018/12/06 00:50:54 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 	unsigned long long int	len;
 
 	if (!s)
-		ft_die("");
+		ft_error("");
 	len = ft_strlen(&s[0]) + 1;
 	while (len--)
 		if (s[len] == (unsigned char)c)

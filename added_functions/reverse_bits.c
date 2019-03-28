@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   reverse_bits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/18 13:44:55 by viwade           ###   ########.fr       */
+/*   Created: 2019/02/07 19:42:31 by viwade            #+#    #+#             */
+/*   Updated: 2019/02/07 21:16:07 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
-
-char	*ft_strchr(const char *s, int c)
+unsigned char
+	reverse_bits(unsigned char octet)
 {
-	size_t	i;
-	char	*ptr;
-
-	i = 0;
-	if (!s)
-		ft_error("");
-	while (s[i])
-	{
-		ptr = (char *)&s[i];
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
-	}
-	return ((s[i] == (char)c) ? (char *)&s[i] : NULL);
+	return (
+		(octet >> 0 & 1) << 7 |
+		(octet >> 1 & 1) << 6 |
+		(octet >> 2 & 1) << 5 |
+		(octet >> 3 & 1) << 4 |
+		(octet >> 4 & 1) << 3 |
+		(octet >> 5 & 1) << 2 |
+		(octet >> 6 & 1) << 1 |
+		(octet >> 7 & 1) << 0);
 }

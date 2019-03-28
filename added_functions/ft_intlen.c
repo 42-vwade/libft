@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/18 13:44:55 by viwade           ###   ########.fr       */
+/*   Created: 2019/02/23 15:08:09 by viwade            #+#    #+#             */
+/*   Updated: 2019/02/23 18:40:59 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int ft_intlen(int n)
 {
-	size_t	i;
-	char	*ptr;
+	int	len;
 
-	i = 0;
-	if (!s)
-		ft_error("");
-	while (s[i])
-	{
-		ptr = (char *)&s[i];
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
-	}
-	return ((s[i] == (char)c) ? (char *)&s[i] : NULL);
+	len = 1;
+	while (n /= 10)
+		++len;
+	return (len);
 }

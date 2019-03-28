@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   print_bits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/18 13:44:55 by viwade           ###   ########.fr       */
+/*   Created: 2019/01/09 21:59:40 by viwade            #+#    #+#             */
+/*   Updated: 2019/01/29 19:58:02 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "../libft.h"
+#include <unistd.h>
 
-char	*ft_strchr(const char *s, int c)
+void
+	print_bits(int octal)
 {
-	size_t	i;
-	char	*ptr;
+	unsigned char ndx;
 
-	i = 0;
-	if (!s)
-		ft_error("");
-	while (s[i])
+	ndx = 0x80;
+	if (octal == -1)
+		return ;
+	while (ndx)
 	{
-		ptr = (char *)&s[i];
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
+		ft_putchar(((unsigned char)octal & ndx) ? '1' : '0');
+		ndx = ndx >> 1;
 	}
-	return ((s[i] == (char)c) ? (char *)&s[i] : NULL);
 }

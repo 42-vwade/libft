@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/29 19:38:22 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/13 18:03:25 by viwade           ###   ########.fr       */
+/*   Updated: 2018/12/06 00:50:54 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	ft_strdel(char **as)
 {
 	if (!as || !*as)
-		return (ft_die(""));
+		return (ft_error(""));
 	free(*as);
 	*as = NULL;
 }

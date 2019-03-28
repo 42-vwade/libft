@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/18 13:44:55 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/13 19:19:31 by viwade            #+#    #+#             */
+/*   Updated: 2019/01/29 19:58:38 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_arrlen(char **ar)
 {
-	size_t	i;
-	char	*ptr;
+	unsigned long long int	len;
 
-	i = 0;
-	if (!s)
-		ft_error("");
-	while (s[i])
-	{
-		ptr = (char *)&s[i];
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
-	}
-	return ((s[i] == (char)c) ? (char *)&s[i] : NULL);
+	len = 0;
+	if (!ar)
+		ft_error("Parameter is NULL. Returning 0.");
+	if (ar)
+		while (ar[len])
+			++len;
+	return (len);
 }

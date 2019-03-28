@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_astrcmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/18 13:44:55 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/12 21:44:27 by viwade            #+#    #+#             */
+/*   Updated: 2019/01/29 19:58:39 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int
+	ft_astrcmp(char **s1, char **s2)
 {
-	size_t	i;
-	char	*ptr;
+	int		i;
 
 	i = 0;
-	if (!s)
-		ft_error("");
-	while (s[i])
-	{
-		ptr = (char *)&s[i];
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
-	}
-	return ((s[i] == (char)c) ? (char *)&s[i] : NULL);
+	while (s1[i] && s2[i])
+		if (!s1[i] && !s2[i])
+			return (1);
+		else if (!s1[i] || !s2[i])
+			return (0);
+		else if (!ft_strcmp(s1[i], s2[i]))
+			return (0);
+		else
+			i++;
+	return (1);
 }

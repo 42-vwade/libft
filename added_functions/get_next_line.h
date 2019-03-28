@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/18 13:44:55 by viwade           ###   ########.fr       */
+/*   Created: 2018/11/18 21:04:41 by viwade            #+#    #+#             */
+/*   Updated: 2019/01/29 19:43:25 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define FD_LIMIT 8192
+# define BUFF_SIZE 21
 
-char	*ft_strchr(const char *s, int c)
+# include "../libft.h"
+# include <sys/types.h>
+# include <unistd.h>
+# include <fcntl.h>
+
+struct	s_file
 {
-	size_t	i;
-	char	*ptr;
+	size_t	ndx;
+	size_t	len;
+	char	*str;
+};
+typedef struct s_file	t_file;
 
-	i = 0;
-	if (!s)
-		ft_error("");
-	while (s[i])
-	{
-		ptr = (char *)&s[i];
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
-	}
-	return ((s[i] == (char)c) ? (char *)&s[i] : NULL);
-}
+int		get_next_line(const int fd, char **line);
+
+#endif
