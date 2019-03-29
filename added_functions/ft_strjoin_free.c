@@ -6,11 +6,11 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 11:02:07 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/21 03:50:07 by viwade           ###   ########.fr       */
+/*   Updated: 2019/03/29 10:20:45 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 char	*ft_strjoin_free(char const *s1, char const *s2)
 {
