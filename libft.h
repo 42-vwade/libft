@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/03/25 14:55:43 by viwade           ###   ########.fr       */
+/*   Updated: 2019/03/29 08:12:09 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,8 @@ char			*ft_itoa_base(int n, int base);
 /*
 **	Length Getters
 */
+
+int				ft_iswhitespace(int c);
 
 /*
 **	Length Getters
