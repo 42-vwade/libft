@@ -6,23 +6,15 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/03/29 08:12:09 by viwade           ###   ########.fr       */
+/*   Updated: 2019/04/05 14:43:14 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include "libft_structs.h"
 # include "added_functions/get_next_line.h"
-
-typedef struct s_list	t_list;
-typedef struct s_quickstring	t_qstr;
-struct			s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-};
 
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
