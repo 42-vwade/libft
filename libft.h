@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/04/07 15:38:09 by viwade           ###   ########.fr       */
+/*   Updated: 2019/04/07 15:57:15 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ char			*ft_strjoin_free(char const *s1, char const *s2);
 size_t			ft_strlen(const char *s);
 size_t			ft_lstlen(t_list *lst);
 size_t			ft_arrlen(char **ar);
-int				ft_intlen(int n);
+unsigned char	ft_intlen(int n);
 
 /*
 **	String Modifiers
