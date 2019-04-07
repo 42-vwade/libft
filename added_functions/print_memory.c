@@ -6,21 +6,23 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 19:50:30 by viwade            #+#    #+#             */
-/*   Updated: 2019/03/25 23:10:02 by viwade           ###   ########.fr       */
+/*   Updated: 2019/04/07 09:32:54 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "../libft.h"
 
-static void
-	print_hex(unsigned char c)
-{
-	char	*key;
-
-	key = "0123456789abcdef";
-	write(1, (char[2]){key[c >> 4], key[c & 0x0f]}, 2);
-}
+/*
+**	static void
+**		print_hex(unsigned char c)
+**	{
+**		char	*key;
+**
+**		key = "0123456789abcdef";
+**		write(1, (char[2]){key[c >> 4], key[c & 0x0f]}, 2);
+**	}
+*/
 
 static void
 	put_hex(int i, size_t size, const char *addr)

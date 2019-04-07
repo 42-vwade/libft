@@ -1,10 +1,10 @@
 
-CFILES		=	$(filter-out ._*, $(notdir $(wildcard *.c)))
+CFILES		=	$(filter %.c, $(filter-out ._%, $(notdir $(wildcard *))))
 OBJECTS		=	$(notdir $(CFILES:%.c=%.o))
 
 
 all: $(OBJECTS)
-	@mv $^ ../
+	@yes | mv -f $^ ../
 
 $(OBJECTS): $(CFILES)
 	@gcc -c -Wall -Wextra -Werror $^

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   print_hex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 02:20:13 by viwade            #+#    #+#             */
-/*   Updated: 2019/04/06 00:33:56 by viwade           ###   ########.fr       */
+/*   Created: 2019/04/06 05:43:09 by viwade            #+#    #+#             */
+/*   Updated: 2019/04/07 09:27:11 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include <unistd.h>
 
-int		ft_tolower(int c)
+void
+	print_hex(unsigned char c)
 {
-	if (((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')\
-			&& ((unsigned)c < 0x100))
-		return (c | 0x20);
-	else
-		return (c);
+	char	*key;
+
+	key = "0123456789abcdef";
+	write(1, (char[2]){key[c >> 4], key[c & 0x0f]}, 2);
 }
