@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/04/07 15:57:15 by viwade           ###   ########.fr       */
+/*   Updated: 2019/04/07 16:26:03 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,6 @@ unsigned char	ft_intlen(int n);
 /*
 **	String Modifiers
 */
-
-
 
 /*
 **	Conversion
