@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 19:50:30 by viwade            #+#    #+#             */
-/*   Updated: 2019/04/07 09:32:54 by viwade           ###   ########.fr       */
+/*   Updated: 2019/04/07 15:47:04 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void
 	while (j < 16)
 	{
 		if (i + j < size)
-			print_hex(addr[i + j]);
+			print_hex((uint8_t)addr[i + j]);
 		else
 			write(1, "  ", 2);
 		if (j % 2)
