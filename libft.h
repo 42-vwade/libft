@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/04/06 08:33:52 by viwade           ###   ########.fr       */
+/*   Updated: 2019/04/07 16:26:03 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			print_bits(int octal);
 void			print_64bits(uint64_t octal);
 void			print_64bits_recursive(uint64_t octal);
-void			print_hex(unsigned char c);
+void			print_hex(unsigned long long int c);
 void			print_memory(const void *addr, size_t size);
 unsigned char	swap_bits(unsigned char octet);
 unsigned char	reverse_bits(unsigned char octet);
@@ -107,19 +107,17 @@ char			*ft_strjoin_free(char const *s1, char const *s2);
 size_t			ft_strlen(const char *s);
 size_t			ft_lstlen(t_list *lst);
 size_t			ft_arrlen(char **ar);
-int				ft_intlen(int n);
+unsigned char	ft_intlen(int n);
 
 /*
 **	String Modifiers
 */
 
-
-
 /*
 **	Conversion
 */
 
-char			*ft_itoa_base(int n, int base);
+char			*ft_itoa_base(long int n, int base);
 
 /*
 **	Length Getters

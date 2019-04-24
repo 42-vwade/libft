@@ -2,6 +2,7 @@
 # Lines that start with '#' are comments.
 # For a project mostly in C, the following would be a good set of
 # exclude patterns (uncomment them if you want to use them):
+<<<<<<< HEAD
 *.[oa]
 *~
 
@@ -11,3 +12,17 @@
 # Comment the following line during build
 #.vscode
 
+=======
+
+*.[oa]
+*~
+
+.*
+*.o
+*.a
+x.*-sh*
+a.out*
+.vscode*
+*printf*
+*.txt
+>>>>>>> 9687ee8e3745e53c36616099adcd3b5e47d2b106
