@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 02:48:54 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/17 01:43:36 by viwade           ###   ########.fr       */
+/*   Updated: 2019/04/24 07:15:59 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t len;
+	char *e;
 
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+	e = (char *)s;
+	while (*(e += !!e[0]))
+		;
+	return (e - s);
 }
