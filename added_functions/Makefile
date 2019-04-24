@@ -1,5 +1,5 @@
 
-CFILES		=	$(filter %.c, $(filter-out ._%, $(notdir $(wildcard *))))
+CFILES		=	$(filter-out ._*, $(filter %.c, $(notdir $(wildcard *))))
 OBJECTS		=	$(notdir $(CFILES:%.c=%.o))
 
 
