@@ -8,15 +8,12 @@
 ._*
 .DS*
 
-# Comment the following line during build
-#.vscode
-
-
-*.[oa]
-*~
-
-.*
 a.*
 x.*
 lib*
+.vscode*
+
 *.txt
+*.gch
+
+main.c
