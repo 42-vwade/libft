@@ -6,12 +6,13 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 10:30:37 by viwade            #+#    #+#             */
-/*   Updated: 2019/01/29 19:58:42 by viwade           ###   ########.fr       */
+/*   Updated: 2019/04/25 11:43:47 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
 #include <unistd.h>
+#include <stdlib.h>
+#include "../libft.h"
 
 void
 	ft_error(const char *message)
@@ -20,4 +21,5 @@ void
 		write(1, "error\n", 0);
 	else
 		ft_putendl(message);
+	exit(EXIT_FAILURE);
 }
