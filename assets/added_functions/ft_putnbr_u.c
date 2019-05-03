@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 07:00:21 by viwade            #+#    #+#             */
-/*   Updated: 2019/04/30 07:06:39 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/02 12:40:44 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 void
-	ft_putunsigned(unsigned int n)
+	ft_putnbr_u(unsigned int n)
 {
 	if (n >= 10)
 		ft_putunsigned(n / 10);
