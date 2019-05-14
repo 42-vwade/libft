@@ -6,11 +6,11 @@ NAME		=	libft.a
 ASSETS		=	assets/
 SRCDIR		=
 HDRDIR		=
-OBJDIR		=
+OBJDIR		=	obj/
 LIBDIR		=
 TMPDIR		=	.tmp/
 #CFILES		=	$(filter-out ._*, $(notdir $(wildcard *.c)))
-CFILES		+=	$(shell find $(ASSETS) ! -name ".*" -name '*.c')
+CFILES		+=	$(shell find */ ! -name ".*" -name '*.c')
 #CFILES		:=	$(notdir $(CFILES))
 HFILES		=	libft.h
 CFLAGS		:=	-c -Wall -Werror -Wextra
@@ -37,21 +37,20 @@ all: $(NAME)
 $(NAME): $(OBJECTS) | $(TMPDIR)
 	@ar rc $@ $^
 	@ranlib $@
-#	@mv $^ $(TMPDIR)
 
 $(OBJECTS): $(CFILES)
-	@make -C $(ASSETS)
+	@make -C $(OBJDIR)
 
 $(TMPDIR):
 	@mkdir -p $@
 
 clean:
-	@make clean -C $(ASSETS)
+	@make clean -C $(OBJDIR)
 	@rm -rf $(TMPDIR)
 	@rm -rf *.o
 
 fclean: clean
-	@make fclean -C $(ASSETS)
+	@make fclean -C $(OBJDIR)
 	@rm -rf $(NAME)
 
 re: fclean all
