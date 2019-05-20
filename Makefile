@@ -47,7 +47,7 @@ $(TMPDIR):
 clean:
 	@make clean -C $(OBJDIR)
 	@rm -rf $(TMPDIR)
-	@rm -rf *.o
+	@cd $(OBJDIR) && rm -rf *.o
 
 fclean: clean
 	@make fclean -C $(OBJDIR)
