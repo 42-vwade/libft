@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_utf8.c                                       :+:      :+:    :+:   */
+/*   write_utf8.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 15:10:43 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/21 03:23:18 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/21 03:24:26 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ static void
 			utf[n] = (set << 1) | (~(set) & wc);
 }
 
-void
-	print_utf8(unsigned int wc)
+size_t
+	write_utf8(unsigned int wc)
 {
 	uint8_t	utf[7];
 
 	print_memory(&wc, sizeof(wc));
 	encode(&utf[0], wc);
 	print_memory(utf, sizeof(*utf) * 7);
-	ft_putstr((char*)utf);
+	return(write(1, (char*)utf, ft_strlen(utf)));
 }
