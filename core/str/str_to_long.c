@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_utf8.c                                       :+:      :+:    :+:   */
+/*   str_to_long.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/14 15:10:43 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/21 04:58:45 by viwade           ###   ########.fr       */
+/*   Created: 2019/05/21 04:09:54 by viwade            #+#    #+#             */
+/*   Updated: 2019/05/21 06:57:48 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "../../libft.h"
 
-size_t
-	write_utf8(unsigned int wc)
+unsigned long long
+	*ft_strtol(char *s)
 {
-	return(write_utf8_fd(wc, 1));
+	uint64_t	*new;
+	size_t		i;
+
+	if (!s || !(new = (uint64_t*)malloc(ft_strlen(s) + 1)))
+		return (NULL);
+	i = 0;
+	while (s[i++])
+		new[i - 1] = (unsigned long long)s[i - 1];
+	return (new);
 }

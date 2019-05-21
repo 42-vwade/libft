@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_utf8.c                                       :+:      :+:    :+:   */
+/*   ft_lstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/14 15:10:43 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/21 04:58:45 by viwade           ###   ########.fr       */
+/*   Created: 2018/07/27 02:48:54 by viwade            #+#    #+#             */
+/*   Updated: 2019/05/21 07:31:51 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "../../libft.h"
+#include <string.h>
 
-size_t
-	write_utf8(unsigned int wc)
+size_t	ft_lstrlen(const unsigned *s)
 {
-	return(write_utf8_fd(wc, 1));
+	unsigned	*e;
+
+	e = (unsigned*)s;
+	while (*(e += !!e[0]))
+		;
+	return ((e - s) / sizeof(int));
 }

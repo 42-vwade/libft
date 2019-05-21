@@ -6,12 +6,12 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/05 12:02:07 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/05 13:12:39 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/21 06:57:23 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**  Raises integer a to power of integer b.
+**  Raises a base value to a power of integer b.
 */
 
 long long int
