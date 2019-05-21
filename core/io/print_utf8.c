@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 15:10:43 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/20 10:43:34 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/21 03:02:15 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,32 @@
 #define ENC(n) (wc >= (n))
 #define ENC1 (ENC(0x80) + ENC(0x800) + ENC(0x10000))
 #define ENC2 (ENC(0x200000) + ENC(0x4000000))
-#define SET(n, b) ((n > (b)) << (n))
+#define SET(b) (((n > (b)) | 2) << (6 - (b)))
+
+static uint8_t
+	pad_set(int8_t n)
+{
+	uint8_t	pad;
+
+	pad = (n) ? 0xC0 : 0x80;
+	while (0 < n--)
+		pad = (pad >> 1) + 0x80;
+	return (pad);
+}
 
 static void
-	encode(uint8_t *utf, unsigned wc, size_t i)
+	encode(uint8_t *utf, unsigned wc)
 {
-	unsigned char	set;
-	size_t			n;
+	uint8_t	set;
+	size_t	n;
 
 	n = 1 + ENC1 + ENC2;
-	set = SET(0, 6) | SET(1, 5) | SET(2, 4) | SET(3, 3) | SET(4, 2) | SET(5, 1);
-	while (n - i++)
-		if (n - i)
-			utf[i - 1] = 0x80 | (~(0xC0) & wc);
+	set = pad_set(n - 1);
+	while (n--)
+		if (n)
+			(utf[n] = 0x80 | (~(0xC0) & wc)) && (wc >>= 6);
 		else
-			utf[i - 1] = (set << 1) | (~(set) & wc);
+			utf[n] = (set << 1) | (~(set) & wc);
 }
 
 void
@@ -37,7 +48,8 @@ void
 {
 	uint8_t	utf[7];
 
-	ft_bzero(utf, 7);
-	encode(&utf[0], wc, 0);
+	print_memory(&wc, sizeof(wc));
+	encode(&utf[0], wc);
+	print_memory(utf, sizeof(*utf) * 7);
 	ft_putstr((char*)utf);
 }
