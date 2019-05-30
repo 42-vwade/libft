@@ -6,13 +6,17 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 15:10:43 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/21 04:58:45 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/22 04:39:22 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "../../libft.h"
 
+/*
+**	Unicode integer (unsigned) as input.
+**	Writes to the standard output.
+*/
 size_t
 	write_utf8(unsigned int wc)
 {

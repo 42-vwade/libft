@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   wstr_to_ustr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 15:08:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/27 16:19:24 by viwade           ###   ########.fr       */
+/*   Created: 2019/05/21 04:09:54 by viwade            #+#    #+#             */
+/*   Updated: 2019/05/23 09:18:10 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-int64_t	ft_intlen(int64_t n)
+int
+	*wstr_to_ustr(wchar_t *s)
 {
-	int64_t	len;
+	int	*new;
+	size_t		i;
 
-	len = 1;
-	while (n /= 10)
-		++len;
-	return (len);
+	if ((i = !s) || !(new = (int*)malloc(ft_lstrlen(s) * sizeof(int) + 1)))
+		return (NULL);
+	while (s[i++])
+		new[i - 1] = (int)s[i - 1];
+	return (new);
 }

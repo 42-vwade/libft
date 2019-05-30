@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 15:08:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/27 16:19:24 by viwade           ###   ########.fr       */
+/*   Created: 2018/07/27 02:48:54 by viwade            #+#    #+#             */
+/*   Updated: 2019/05/27 12:20:09 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
+#include <string.h>
 
-int64_t	ft_intlen(int64_t n)
+int64_t
+	ft_wstrlen(wchar_t *s)
 {
-	int64_t	len;
+	wchar_t	*e;
 
-	len = 1;
-	while (n /= 10)
-		++len;
-	return (len);
+	e = s;
+	while (*(e += !!e[0]))
+		;
+	return ((e - s) / sizeof(wchar_t));
 }

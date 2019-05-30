@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_intlen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 15:08:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/27 16:19:24 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/27 16:21:43 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-int64_t	ft_intlen(int64_t n)
+int64_t	ft_intlen_base(uint64_t n, int base)
 {
 	int64_t	len;
 
 	len = 1;
-	while (n /= 10)
+	while (n /= base)
 		++len;
 	return (len);
 }

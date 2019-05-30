@@ -6,13 +6,13 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/05 04:00:04 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/13 19:08:15 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/27 12:20:57 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-size_t	ft_lstlen(t_list *list)
+int64_t	ft_lstlen(t_list *list)
 {
 	size_t	len;
 
