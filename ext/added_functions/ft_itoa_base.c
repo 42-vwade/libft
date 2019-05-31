@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:58:04 by viwade            #+#    #+#             */
-/*   Updated: 2019/04/07 15:37:36 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/31 12:06:08 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 #define FT_ITOA_SIZE(x) ((x) < 0) ? 3 : 2
 #define FT_ITOA_PUT(k,n,b,a) (a) = (k)[ABS(n) % b]; n /= b
 
-char	*ft_itoa_base(int64_t n, int base)
+char	*ft_itoa_base(long long n, int base)
 {
-	uint	len;
+	size_t	len;
 	int64_t	tmp;
 	int8_t	size;
 	char	*str;

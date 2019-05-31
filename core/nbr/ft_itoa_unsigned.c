@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_unsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/27 02:48:54 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/31 12:10:12 by viwade           ###   ########.fr       */
+/*   Created: 2018/10/23 21:58:04 by viwade            #+#    #+#             */
+/*   Updated: 2019/05/31 12:17:52 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
-#include <string.h>
+#include <stdlib.h>
 
-FT_SIZE	ft_strlen(const char *s)
+FT_STR
+	ft_itoa_unsigned(FT_ULL n)
 {
-	char *e;
-
-	e = (char *)s;
-	while (*(e += !!e[0]))
-		;
-	return (e - s);
+	return (ft_itoa_base(n, 10));
 }

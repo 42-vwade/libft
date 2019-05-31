@@ -6,36 +6,20 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:58:04 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/13 18:41:30 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/31 12:17:21 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 #include <stdlib.h>
 
-char	*ft_itoa(int n)
+FT_STR
+	ft_itoa(FT_LL n)
 {
-	int		len;
-	int		tmp;
-	int		size;
-	char	*str;
+	char	*ret;
 
-	len = 0;
-	size = ((unsigned int)n < 0x80000000) ? 2 : 3;
-	tmp = n;
-	while (tmp /= 10)
-		len++;
-	len += size;
-	if ((str = (char *)malloc(len * sizeof(*str))))
-	{
-		str[--len] = 0;
-		while (len--)
-		{
-			str[len] = ((n < 0) ? -(n % 10) : n % 10) + 48;
-			n /= 10;
-		}
-		if (size == 3)
-			str[0] = '-';
-	}
-	return (str);
+	ret = ft_itoa_base(ABS(n), 10);
+	if (n < 0)
+		ret = ft_strjoin_free(ft_strdup("-"), ret);
+	return (ret);
 }

@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_utf8_fd.c                                    :+:      :+:    :+:   */
+/*   encode_utf8.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/14 15:10:43 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/31 08:30:24 by viwade           ###   ########.fr       */
+/*   Created: 2019/05/31 08:19:37 by viwade            #+#    #+#             */
+/*   Updated: 2019/05/31 09:02:14 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "../../libft.h"
 #define ENC(n) (wc >= (n))
 #define ENC1 (ENC(0x80) + ENC(0x800) + ENC(0x10000))
@@ -43,21 +42,35 @@ static void
 			utf[n] = (set << 1) | (~(set) & wc);
 }
 
-/*
-**	Unicode integer (unsigned) as input.
-**	Writes to specified file_descriptor.
-*/
-size_t
-	write_utf8_fd(unsigned int wc, int fd)
+static FT_STR
+	parse_utf8(unsigned wc, void *utf)
 {
-	uint8_t	utf[7];
+	void	*new;
 
-	ft_bzero(utf, 7);
+	if (!(new = ft_strnew(8)))
+		return (NULL);
 	if (!wc)
 		return (0);
 	else if (wc < 0x80)
-		utf[0] = wc;
+		*(uint8_t*)new = wc;
 	else
-		encode(utf, wc);
-	return(write(fd, utf, ft_strlen((char*)utf)));
+		encode(new, wc);
+	return (ft_strjoin_free(utf, new));
+}
+
+/*
+**	Unicode integer string (unsigned int *) as input.
+**	Returns UTF-8 encoded characters as a continuous string of bytes.
+*/
+FT_STR
+	encode_utf8(unsigned int *wc)
+{
+	void	*utf;
+
+	if (!(utf = ft_strdup("")))
+		return (NULL);
+	while (wc[0])
+		if (!parse_utf8(*wc++, utf))
+			return (NULL);
+	return(utf);
 }

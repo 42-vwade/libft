@@ -6,13 +6,22 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2018/11/09 21:09:19 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/31 13:21:14 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#define BREAK
 
-void	*ft_memchr(const void *s, int c, size_t n)
+/*
+**	Search function.
+**	Function searches for a given value through n bytes of memory.
+**	If found, the address where the value is located is returned.
+**	If it is not found, NULL is returned.
+*/
+
+void
+	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
 	unsigned char	*p;

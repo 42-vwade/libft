@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 07:18:13 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/28 14:18:57 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/30 15:34:59 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static int
 static void
 	round_up(double *n, unsigned p, unsigned num)
 {
-	if ((num = get_decimal(n[0], p) >= 5))
-		n[0] += (double)(10 - num) / ft_power(10, p - 1);
+	if ((num = get_decimal(n[0], p + 1)) >= 5)
+		n[0] += (double)1 / ft_power(10, MAX(0, p));
 }
 
 static void

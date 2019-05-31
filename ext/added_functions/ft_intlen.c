@@ -6,15 +6,15 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 15:08:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/27 16:19:24 by viwade           ###   ########.fr       */
+/*   Updated: 2019/05/31 12:10:16 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-int64_t	ft_intlen(int64_t n)
+size_t	ft_intlen(uint64_t n)
 {
-	int64_t	len;
+	size_t	len;
 
 	len = 1;
 	while (n /= 10)
