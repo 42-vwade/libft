@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 08:19:37 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/31 09:02:14 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/01 06:22:34 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,19 @@ static void
 			(utf[n] = 0x80 | (~(0xC0) & wc)) && (wc >>= 6);
 		else
 			utf[n] = (set << 1) | (~(set) & wc);
+	utf[6] = 0;
 }
 
 static FT_STR
 	parse_utf8(unsigned wc, void *utf)
 {
-	void	*new;
+	uint8_t	new[7];
 
-	if (!(new = ft_strnew(8)))
-		return (NULL);
-	if (!wc)
-		return (0);
-	else if (wc < 0x80)
-		*(uint8_t*)new = wc;
+	if (wc < 0x80)
+		new[0] = wc;
 	else
 		encode(new, wc);
-	return (ft_strjoin_free(utf, new));
+	return (ft_strjoin_free(utf, ft_strdup((char*)new)));
 }
 
 /*
@@ -70,7 +67,7 @@ FT_STR
 	if (!(utf = ft_strdup("")))
 		return (NULL);
 	while (wc[0])
-		if (!parse_utf8(*wc++, utf))
+		if (!(utf = parse_utf8((wc++)[0], utf)))
 			return (NULL);
 	return(utf);
 }
