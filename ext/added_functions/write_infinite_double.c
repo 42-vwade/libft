@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 15:41:29 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/31 12:03:45 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/04 01:21:40 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ static char
 static char
 	*get_decimal(
 		double n,
-		FT_ULL p
-	)
+		ull_t p)
 {
 	char	*dec;
 
@@ -52,9 +51,8 @@ static char
 
 FT_SIZE
 	write_infinite_double(
-		FT_LDBL d,
-		FT_ULL p
-	)
+		ld_t d,
+		ull_t p)
 {
 	FT_NBR	nbr;
 
@@ -66,9 +64,8 @@ FT_SIZE
 
 FT_STR
 	infinite_double(
-		FT_LDBL n,
-		FT_ULL p
-	)
+		ld_t n,
+		ull_t p)
 {
 	char	*dec;
 	FT_NBR	nbr[1];
@@ -86,7 +83,7 @@ FT_STR
 }
 
 FT_STR
-	infinite_int(int64_t n)
+	infinite_int(ll_t n)
 {
 	char	*nbr;
 	char	*tmp;

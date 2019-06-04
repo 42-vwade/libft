@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 11:02:07 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/13 18:41:30 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/03 08:44:49 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len;
 	char	*new;
 
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (NULL);
+	if (!s2)
+		return ((char*)s1);
+	if (!s1)
+		return ((char*)s2);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	if ((new = (char *)malloc(sizeof(*new) * len + 1)))
 		if ((new = ft_strncpy(new, s1, len)))
