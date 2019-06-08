@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 04:09:54 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/08 14:11:11 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/08 14:33:05 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int
 	size_t	i;
 
 	i = 0;
-	len = MIN(ft_lstrlen(s), len) + 1;
+	len = ft_lstrlen(s) + 1;
 	if (!s || !(new = (int*)malloc((len) * sizeof(int))))
 		return (NULL);
 	while (s[i++] && (len -= !!len))

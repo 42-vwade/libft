@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 08:19:37 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/08 13:53:48 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/08 14:29:42 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,12 @@ static FT_STR
 	parse_utf8(unsigned wc)
 {
 	uint8_t	new[7];
-	ssize_t	size;
 
 	if (wc < 0x80)
 		new[0] = wc;
 	else
 		encode(new, wc);
-	return (ft_strdup(new));
+	return (ft_strdup((void*)new));
 }
 
 /*
@@ -62,15 +61,16 @@ static FT_STR
 */
 
 FT_STR
-	encode_utf8_w(unsigned int *wc, size_t bytes)
+	encode_utf8_w(int *wc, size_t bytes)
 {
 	void	*utf;
-	size_t	len;
 
-	if (!(utf = ft_strdup("")))
-		return (NULL);
+	utf = NULL;
 	while (wc[0] && (signed)(bytes - ft_strlen(utf)) > 0)
-		ft_strjoin_free(utf, parse_utf8((wc++)[0]));
+		if (utf)
+			utf = ft_strjoin_free(utf, parse_utf8((wc++)[0]));
+		else
+			utf = parse_utf8((wc++)[0]);
 	return (utf);
 }
 
@@ -79,10 +79,11 @@ FT_STR
 {
 	void	*utf;
 
-	if (!(utf = ft_strdup("")))
-		return (NULL);
+	utf = NULL;
 	while (wc[0])
-		if (!(utf = parse_utf8((wc++)[0])))
-			return (NULL);
+		if (utf)
+			utf = ft_strjoin_free(utf, parse_utf8(*wc++));
+		else
+			utf = parse_utf8(*wc++);
 	return (utf);
 }

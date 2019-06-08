@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 11:12:24 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/07 16:57:31 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/08 14:39:25 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ t_str	*tstr_dup_free(char *s)
 	return (new);
 }
 
-void	*tstr_free(t_str **s)
+void	tstr_free(t_str *s)
 {
-	ft_free(s[0]->str);
-	ft_free(s[0]);
+	ft_free(s->str);
+	ft_free(s);
 }
