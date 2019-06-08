@@ -6,11 +6,18 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 06:17:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/13 19:08:15 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/07 17:33:44 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
+
+/*
+**	Takes the address of a pointer to a list node as argument.
+**	Takes a pointer to a valid list node as argument.
+**	Function checks if current node exists. If not, the new node is placed.
+**	Otherwise,
+*/
 
 void
 	ft_lstpush(t_list **list, t_list *new)
@@ -27,7 +34,7 @@ void
 		push = push->next;
 	if (!push->content)
 	{
-		ft_lstdelone(list, ft_del);
+		ft_lstdelone(&push, ft_del);
 		push = new;
 	}
 	else

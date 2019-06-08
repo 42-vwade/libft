@@ -6,14 +6,19 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 02:48:54 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/27 12:20:32 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/08 14:11:59 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 #include <string.h>
 
-int64_t	ft_lstrlen(const int *s)
+/*
+**	Returns number of integers in a string of integers.
+**	Integer string shall be null-terminated.
+*/
+
+size_t	ft_lstrlen(const int *s)
 {
 	int	*e;
 

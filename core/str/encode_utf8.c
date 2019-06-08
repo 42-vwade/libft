@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 08:19:37 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/01 06:22:34 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/08 13:53:48 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,30 +44,45 @@ static void
 }
 
 static FT_STR
-	parse_utf8(unsigned wc, void *utf)
+	parse_utf8(unsigned wc)
 {
 	uint8_t	new[7];
+	ssize_t	size;
 
 	if (wc < 0x80)
 		new[0] = wc;
 	else
 		encode(new, wc);
-	return (ft_strjoin_free(utf, ft_strdup((char*)new)));
+	return (ft_strdup(new));
 }
 
 /*
 **	Unicode integer string (unsigned int *) as input.
 **	Returns UTF-8 encoded characters as a continuous string of bytes.
 */
+
 FT_STR
-	encode_utf8(unsigned int *wc)
+	encode_utf8_w(unsigned int *wc, size_t bytes)
+{
+	void	*utf;
+	size_t	len;
+
+	if (!(utf = ft_strdup("")))
+		return (NULL);
+	while (wc[0] && (signed)(bytes - ft_strlen(utf)) > 0)
+		ft_strjoin_free(utf, parse_utf8((wc++)[0]));
+	return (utf);
+}
+
+FT_STR
+	encode_utf8(int *wc)
 {
 	void	*utf;
 
 	if (!(utf = ft_strdup("")))
 		return (NULL);
 	while (wc[0])
-		if (!(utf = parse_utf8((wc++)[0], utf)))
+		if (!(utf = parse_utf8((wc++)[0])))
 			return (NULL);
-	return(utf);
+	return (utf);
 }

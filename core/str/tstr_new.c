@@ -1,38 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   tstr_new.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 03:44:09 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/07 18:26:49 by viwade           ###   ########.fr       */
+/*   Created: 2019/06/07 11:12:24 by viwade            #+#    #+#             */
+/*   Updated: 2019/06/07 16:57:31 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "../../libft.h"
 
-/*
-**	Function searches through string for character given.
-**	If found, returns address value at location found.
-**	Otherwise, return null.
-*/
-
-char	*ft_strchr(const char *s, int c)
+t_str	*tstr_new(char *s)
 {
-	size_t	i;
-	char	*ptr;
+	t_str	*new;
 
-	i = 0;
-	if (!s)
-		ft_error("");
-	while (s[i])
-	{
-		ptr = (char *)&s[i];
-		if ((char)c == s[i])
-			return ((char *)&s[i]);
-		i++;
-	}
-	return ((s[i] == (char)c) ? (char *)&s[i] : NULL);
+	if (!(new = (t_str *)malloc(sizeof(t_str))))
+		return (NULL);
+	new->str = s;
+	new->length = s ? ft_strlen(s) : 0;
+	return (new);
+}
+
+t_str	*tstr_dup(char *s)
+{
+	t_str	*new;
+
+	new = tstr_new(ft_strdup(s));
+	return (new);
+}
+
+t_str	*tstr_dup_free(char *s)
+{
+	t_str	*new;
+
+	new = tstr_new(ft_strdup(s));
+	ft_free(s);
+	return (new);
+}
+
+void	*tstr_free(t_str **s)
+{
+	ft_free(s[0]->str);
+	ft_free(s[0]);
 }
