@@ -6,13 +6,13 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 20:10:20 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/13 18:41:30 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/10 06:07:56 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-static	int	compare(const char *s, const char *q)
+static	int	compare_str(const char *s, const char *q)
 {
 	size_t	i;
 
@@ -32,7 +32,7 @@ char		*ft_strstr(const char *s, const char *c)
 		ft_error("");
 	while (s[i])
 		if (s[i++] == c[0])
-			if (compare(&s[i - 1], c))
+			if (compare_str(&s[i - 1], c))
 				return ((char *)&s[i - 1]);
 	return ((c[0]) ? NULL : (char *)s);
 }
