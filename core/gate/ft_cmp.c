@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_utf8.c                                         :+:      :+:    :+:   */
+/*   ft_cmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 04:09:54 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/08 17:44:45 by viwade           ###   ########.fr       */
+/*   Created: 2019/06/09 23:59:41 by viwade            #+#    #+#             */
+/*   Updated: 2019/06/10 00:01:45 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include <stdlib.h>
 
-int
-	*str_utf8(wchar_t *s)
+char	ft_cmp(size_t a, size_t b)
 {
-	int		*new;
-	size_t	len;
-	size_t	i;
-
-	i = 0;
-	len = ft_lstrlen(s) + 1;
-	if (!s || !(new = (int*)malloc((len) * sizeof(int))))
-		return (NULL);
-	while (s[i++] && (len -= !!len))
-		new[i - 1] = (int)s[i - 1];
-	return (new);
+	return (a == b);
 }

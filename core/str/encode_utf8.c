@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 08:19:37 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/08 14:29:42 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/09 16:53:57 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,16 @@ FT_STR
 	encode_utf8_w(int *wc, size_t bytes)
 {
 	void	*utf;
+	void	*chr;
 
 	utf = NULL;
-	while (wc[0] && (signed)(bytes - ft_strlen(utf)) > 0)
-		if (utf)
-			utf = ft_strjoin_free(utf, parse_utf8((wc++)[0]));
+	chr = NULL;
+	while (wc[0])
+		if ((signed)(bytes - ft_strlen(utf) -
+				ft_strlen(chr = parse_utf8((wc++)[0])) > 0))
+			utf = ft_strjoin_free(utf, chr);
 		else
-			utf = parse_utf8((wc++)[0]);
+			break ;
 	return (utf);
 }
 
