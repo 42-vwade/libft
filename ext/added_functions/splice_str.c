@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 05:41:00 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/10 06:18:06 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/11 13:40:17 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,11 @@ char
 		return (source);
 	return (
 		ft_strjoin_free(
-			ft_strjoin(
-				ft_strsub(source, 0, ndx),
-				fragment),
-			ft_strsub(source, ndx , ft_strlen(&source[ndx]))
+			ft_strsub(source, 0, ndx),
+			ft_strjoin_free(
+				ft_strdup(fragment),
+				ft_strsub(ft_strdup(source), ndx , ft_strlen(&source[ndx]))
+			)
 		)
 	);
 }

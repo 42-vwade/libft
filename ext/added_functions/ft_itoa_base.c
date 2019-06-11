@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:58:04 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/04 03:15:36 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/11 00:43:37 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 
 char	*ft_itoa_base(unsigned long long n, int base)
 {
-	size_t	len;
-	int64_t	tmp;
-	int8_t	size;
-	char	*str;
-	char	*key;
+	size_t		len;
+	uint64_t	tmp;
+	uint8_t		size;
+	char		*str;
+	char		*key;
 
 	len = 0;
 	key = BASE16_LOWER;
