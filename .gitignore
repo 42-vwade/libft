@@ -10,7 +10,6 @@
 
 a.*
 x.*
-lib*
 .vscode*
 
 *.txt
