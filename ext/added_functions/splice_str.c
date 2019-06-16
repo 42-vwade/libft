@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 05:41:00 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/11 13:40:17 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/16 13:07:04 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ char
 		return (source);
 	if ((gem = ft_strnstr(source, needle, len)))
 		return (splice_str(source, fragment, &gem[len] - source));
+	else
+		return (splice_str(source, fragment, 0));
 	return (source);
 }
 
