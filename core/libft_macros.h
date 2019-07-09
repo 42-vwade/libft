@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 00:37:49 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/09 16:50:08 by viwade           ###   ########.fr       */
+/*   Updated: 2019/06/22 06:07:14 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@
 # define LL	FT_LL
 # define ULL FT_ULL
 # define NBR t_num
-# define IF_C(c,t)		{if((c)){t}}
+# define IF_C(c,t)		{if((c)){t;}}
 # define IF_E(c,a,b)	{if((c)){a;}else{b;}}
 
 # define ABS(n) ((n) < 0 ? -(n) : (n))
