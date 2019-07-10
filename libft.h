@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/10 15:38:04 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/10 16:38:37 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,7 @@ int64_t			ft_arrlen(char **ar);
 */
 
 int				ft_atoi(const char *str);
-long long		ft_hextol(char *s);
+ull_t			ft_hextol(char *s);
 FT_STR			ft_itoa(ll_t value);
 FT_STR			ft_itoa_unsigned(ull_t value);
 FT_STR			ft_itoa_base(ull_t value, int base);

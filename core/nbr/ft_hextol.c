@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 15:02:18 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/10 16:35:20 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/10 16:38:09 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static char
 		return (-1);
 }
 
-long long
+unsigned long long
 	ft_hextol(char *s)
 {
-	long long	num;
-	char		val;
+	unsigned long long	num;
+	char				val;
 
 	num = 0;
 	while ((9 <= s[0] && s[0] <= 13) || s[0] == 32)
