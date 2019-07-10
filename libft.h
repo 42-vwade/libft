@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/10 13:30:42 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/10 15:38:04 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ FT_SIZE			write_infinite_double(ld_t value, ull_t precision);
 **	The functions do that. The names may be inappropriate.
 */
 
-int				ft_atoi(const char *str);
 uint32_t		*ft_strtoi(char *str);
 ull_t			*ft_strtol(char *str);
 int				*str_utf8(wchar_t *l_str);
@@ -167,6 +166,8 @@ int64_t			ft_arrlen(char **ar);
 **	Conversion
 */
 
+int				ft_atoi(const char *str);
+long long		ft_hextol(char *s);
 FT_STR			ft_itoa(ll_t value);
 FT_STR			ft_itoa_unsigned(ull_t value);
 FT_STR			ft_itoa_base(ull_t value, int base);
