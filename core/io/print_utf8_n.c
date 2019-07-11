@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 15:10:43 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/22 03:18:43 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/11 15:25:49 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 **	Unicode string as array of integer-32 values.
 **	Unicode string shall be null-terminated.
 */
+
 size_t
 	print_utf8_n(unsigned int *ws, size_t len)
 {

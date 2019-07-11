@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 15:10:43 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/31 08:30:24 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/11 15:27:27 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ static void
 **	Unicode integer (unsigned) as input.
 **	Writes to specified file_descriptor.
 */
+
 size_t
 	write_utf8_fd(unsigned int wc, int fd)
 {
@@ -59,5 +60,5 @@ size_t
 		utf[0] = wc;
 	else
 		encode(utf, wc);
-	return(write(fd, utf, ft_strlen((char*)utf)));
+	return (write(fd, utf, ft_strlen((char*)utf)));
 }

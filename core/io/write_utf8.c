@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 15:10:43 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/22 04:39:22 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/11 15:26:50 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
 /*
 **	Unicode integer (unsigned) as input.
 **	Writes to the standard output.
-*/
+*/\
+
 size_t
 	write_utf8(unsigned int wc)
 {
-	return(write_utf8_fd(wc, 1));
+	return (write_utf8_fd(wc, 1));
 }
