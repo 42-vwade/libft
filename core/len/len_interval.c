@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 16:58:45 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/10 17:07:36 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/11 15:23:12 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ size_t	len_interval(void const *s, size_t interval)
 	size_t		v;
 
 	e = s;
-	while (((char *)e)[0])
+	while (!(v = 0))
 	{
 		i = 0;
-		v = 0;
 		while (i < interval)
-			v += (char)((char *)v)[i++];
+			v += (char)((char *)e)[i++];
+		if (!v)
+			break ;
+		e += interval;
 	}
+	return (e - s);
 }
