@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/11 15:22:57 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/12 00:27:10 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,8 +182,11 @@ size_t			len_interval(void const *s, size_t interval);
 size_t			slen(const char *s, size_t maxsize);
 
 /*
-**	Length Getters
+**	Math
 */
+
+double			ft_sqrt(double n);
+double			ft_sqroot(double n);
 
 /*
 **	Length Getters
