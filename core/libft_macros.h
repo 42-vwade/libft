@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 00:37:49 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/11 15:27:56 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/13 01:58:08 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@
 # define IF_E(c,a,b)	{if((c)){a;}else{b;}}
 
 # define ABS(n) ((n) < 0 ? -(n) : (n))
-# define MIN(a, b) ((signed)(a) < (signed)(b) ? (signed)(a) : (signed)(b))
-# define MAX(a, b) ((signed)(a) > (signed)(b) ? (signed)(a) : (signed)(b))
+# define MIN(a, b) ((a) < (b) ? (a) : (b))
+# define MAX(a, b) ((a) > (b) ? (a) : (b))
 
 /*
 **	TYPE DEFINITION
