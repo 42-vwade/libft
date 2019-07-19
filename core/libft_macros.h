@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 00:37:49 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/17 20:02:12 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/18 20:58:15 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@
 # define ABS(n) ((n) < 0 ? -(n) : (n))
 # define MIN(a, b) ((a) < (b) ? (a) : (b))
 # define MAX(a, b) ((a) > (b) ? (a) : (b))
-# define SQ(a)  ((a)*(a))
+# define SQ(a)      ((a)*(a))
+# define PYTH(a,b,c)    (SQ(a)+SQ(b)+SQ(c))
 
 /*
 **	TYPE DEFINITION
