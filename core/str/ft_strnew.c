@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/29 18:49:52 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/13 18:41:30 by viwade           ###   ########.fr       */
+/*   Updated: 2019/08/02 11:53:24 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnew(size_t size)
 {
 	char	*new;
 
-	if ((new = (char *)malloc(++size)))
-		ft_bzero(new, size);
+	if (!(new = (char *)malloc(++size)))
+		ft_error("ft_strnew-error: String allocation failed.");
 	return (new);
 }

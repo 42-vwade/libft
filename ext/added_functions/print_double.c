@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 07:18:13 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/30 15:34:59 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/15 23:38:52 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #define D_MASK (0xFFFFFFFF00000000u)
 
 static int
-	get_decimal(double n, int p)
+	get_decimal(ld_t n, int p)
 {
 	while (p--)
 	{
@@ -29,14 +29,14 @@ static int
 */
 
 static void
-	round_up(double *n, unsigned p, unsigned num)
+	round_up(ld_t *n, unsigned p, unsigned num)
 {
 	if ((num = get_decimal(n[0], p + 1)) >= 5)
-		n[0] += (double)1 / ft_power(10, MAX(0, p));
+		n[0] += (ld_t)1 / ft_power(10, MAX(0, p));
 }
 
 static void
-	write_decimal(double n, size_t p, size_t i)
+	write_decimal(ld_t n, size_t p, size_t i)
 {
 	write(1, ".", 1);
 	while (p - i++)
@@ -44,7 +44,7 @@ static void
 }
 
 void
-	print_double(double n, unsigned int precision)
+	print_double(ld_t n, unsigned int precision)
 {
 	if (n < 0 && write(1, "-", 1))
 		n = ABS(n);

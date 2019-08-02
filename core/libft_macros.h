@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 00:37:49 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/13 01:58:08 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/16 01:31:09 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@
 # define NBR t_num
 # define IF_C(c,t)		{if((c)){t;}}
 # define IF_E(c,a,b)	{if((c)){a;}else{b;}}
+# define _B(a, b)          {a;b;}
 
 # define ABS(n) ((n) < 0 ? -(n) : (n))
 # define MIN(a, b) ((a) < (b) ? (a) : (b))
@@ -58,10 +59,12 @@
 */
 
 # define _TD_LD		typedef long double	ld_t
+# define _TD_D		typedef double	db_t
 # define _TD_LL		typedef long long	ll_t
 # define _TD_ULL	typedef unsigned long long	ull_t
 
 _TD_LD;
+_TD_D;
 _TD_LL;
 _TD_ULL;
 

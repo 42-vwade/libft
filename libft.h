@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/12 00:27:10 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/15 23:38:56 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ FT_VOID			ft_putnbr(long long int number);
 FT_VOID			ft_putnbr_fd(long long int number, int file_descriptor);
 FT_VOID			ft_putnbr_u(unsigned int number);
 FT_VOID			print_float(float n, FT_SIZE precision);
-FT_VOID			print_double(double value, unsigned int precision);
+FT_VOID			print_double(ld_t value, unsigned int precision);
 FT_STR			infinite_double(ld_t value, ull_t precision);
 FT_SIZE			write_infinite_double(ld_t value, ull_t precision);
 

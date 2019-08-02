@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 15:41:29 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/04 01:21:40 by viwade           ###   ########.fr       */
+/*   Updated: 2019/07/15 23:27:01 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ static char
 
 static char
 	*get_decimal(
-		double n,
+		ld_t n,
 		ull_t p)
 {
 	char	*dec;
 
+	while (n >= 1.0)
+		n = (n - (LL)n);
 	n = (n - (LL)n) * 10;
 	dec = ft_strdup((char[2]){ABS((int)(n)) + 48, 0});
 	while ((p -= !!p) && NXT_N(n))
