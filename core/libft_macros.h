@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 00:37:49 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/03 23:37:55 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/04 00:20:58 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@
 # define MATCH(a,b) if ((a)) b
 # define OR(a,b)	else if ((a)) b
 # define ELSE(a)	else a
+# define ANY2(x,a,b)		((x == a)||(x == b))
+# define ANY3(x,a,b,c)		((x == a)||(x == b)||(x == c))
+# define ANY4(x,a,b,c,d)	((x == a)||(x == b)||(x == c)||(x == d))
+# define ANY4(x,a,b,c,d,e)	((x == a)||(x == b)||(x == c)||(x == d)||(x == e))
 # define GROUP(x)	{x}
 # define LINE(x)	x;
 # define IF_C(c,t)		{if((c)){t;}}
