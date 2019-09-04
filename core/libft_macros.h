@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 00:37:49 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/04 00:20:58 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/04 00:31:40 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@
 # define ULL FT_ULL
 # define NBR t_num
 # define RET		return
+# define RETURN		return
 # define MATCH(a,b) if ((a)) b
 # define OR(a,b)	else if ((a)) b
 # define ELSE(a)	else a
