@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 00:37:49 by viwade            #+#    #+#             */
-/*   Updated: 2019/08/02 11:57:28 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/03 21:49:57 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@
 # define LL	FT_LL
 # define ULL FT_ULL
 # define NBR t_num
+# define MATCH(a,b) if (a) b
+# define OR(a,b)	else if (a) b
+# define ELSE(a)	else a
 # define IF_C(c,t)		{if((c)){t;}}
 # define IF_E(c,a,b)	{if((c)){a;}else{b;}}
 # define _B(a, b)          {a;b;}

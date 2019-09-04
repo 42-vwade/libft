@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 20:55:41 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/03 21:33:48 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/03 21:37:25 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@
 char	*ft_append(const char *s1, const char *s2, int mode)
 {
 	char	*string;
-	
+
 	if (mode != FREE_BOTH || mode != FREE_LEFT || mode != FREE_RIGHT)
 		ft_error("ft_append: no mode specified");
 	string = 0;
 	MODE_0(string, mode, s1, s2);
 	MODE_1(string, mode, s1, s2);
 	MODE_2(string, mode, s1, s2);
-	return (string)
+	return (string);
 }
