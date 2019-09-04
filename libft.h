@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/08/05 23:41:52 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/03 21:35:03 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ FT_VOID			ft_lstpush(t_list **list, t_list *new);
 FT_VOID			ft_lstpop(t_list **list);
 FT_VOID			**ft_lst2arr(t_list *lst);
 FT_VOID			ft_error(const char *message);
+char			*ft_append(const char *s1, const char *s2, int mode);
 char			*ft_strjoin_free(char const *s1, char const *s2);
 
 /*
