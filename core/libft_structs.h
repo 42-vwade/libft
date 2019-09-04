@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 14:36:22 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/11 15:28:05 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/03 18:58:01 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ struct	s_str
 {
 	char	*str;
 	size_t	length;
+	char	free:1;
 };
 
 struct	s_128b

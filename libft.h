@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/08/02 11:57:42 by viwade           ###   ########.fr       */
+/*   Updated: 2019/08/05 23:41:52 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 **		STANDARD OUTPUT
 */
 
-FT_VOID			ft_putchar(char c);
+FT_VOID			ft_putchar(int c);
 FT_VOID			ft_putchar_fd(char c, int fd);
 FT_VOID			ft_putwchar(unsigned int wc);
 FT_SIZE			write_utf8(unsigned int wc);

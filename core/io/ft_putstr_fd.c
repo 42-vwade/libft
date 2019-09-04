@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 21:44:18 by viwade            #+#    #+#             */
-/*   Updated: 2019/05/13 19:06:22 by viwade           ###   ########.fr       */
+/*   Updated: 2019/08/06 00:01:41 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	if (s)
-		if ((unsigned int)fd != 0xFFFFFFFF)
-			write(fd, s, ft_strlen(s));
+	if (s && fd != -1)
+		write(fd, s, ft_strlen(s));
 }
