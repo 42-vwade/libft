@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 00:37:49 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/03 23:36:24 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/03 23:37:55 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@
 # define MATCH(a,b) if ((a)) b
 # define OR(a,b)	else if ((a)) b
 # define ELSE(a)	else a
+# define GROUP(x)	{x}
+# define LINE(x)	x;
 # define IF_C(c,t)		{if((c)){t;}}
 # define IF_E(c,a,b)	{if((c)){a;}else{b;}}
 # define _B(a, b)          {a;b;}
