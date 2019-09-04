@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/26 10:07:14 by viwade            #+#    #+#             */
-/*   Updated: 2019/08/06 02:13:47 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/04 03:12:51 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 
 void	ft_putchar(int c)
 {
-	char	*tmp;
+	void	*tmp;
 
+	tmp = 0;
 	if (c)
 	{
-		tmp = encode_utf8((int[]){c, 0});
-		write(1, tmp, 1 + _CHSIZE((unsigned)c));
-		ft_memdel(&tmp);
+		MATCH(c > 0x7f, tmp = encode_utf8((int[]){c, 0}));
+		MATCH(c > 0x7f, write(1, tmp, 1 + _CHSIZE((unsigned)c)));
+		ELSE(write(1, &c, 1));
+		MATCH(tmp, ft_memdel(&tmp));
 	}
 }
 
