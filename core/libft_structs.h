@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 14:36:22 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/03 18:58:01 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/05 20:56:56 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,17 @@
 # define LIBFT_STRUCTS_H
 # include <stdlib.h>
 
+typedef struct s_byte_string	t_bstr;
 typedef struct s_list	t_list;
 typedef struct s_num	t_num;
 typedef struct s_str	t_str;
 typedef struct s_128b	t_128b;
+
+struct	s_byte_string
+{
+	void	*data;
+	size_t	length;
+};
 
 struct	s_list
 {

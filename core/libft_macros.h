@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 00:37:49 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/04 02:58:15 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/05 21:02:13 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,12 @@
 # define _TD_D		typedef double	db_t
 # define _TD_LL		typedef long long	ll_t
 # define _TD_ULL	typedef unsigned long long	ull_t
+# define _TD_BSTR	typedef struct s_byte_string bstr_t
 
 _TD_LD;
 _TD_D;
 _TD_LL;
 _TD_ULL;
+_TD_BSTR;
 
 #endif
