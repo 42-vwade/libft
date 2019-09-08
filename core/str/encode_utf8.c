@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 08:19:37 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/07 22:04:26 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/08 04:36:47 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ static void
 }
 
 static FT_STR
-	parse_utf8(unsigned wc, uint8_t **new)
+	parse_utf8(unsigned wc, char **new)
 {
 
 	ft_bzero(new[0], 7);
 	if (wc < 0x80)
-		new[0] = wc;
+		new[0][0] = wc;
 	else
-		encode(new, wc);
-	return (new);
+		encode((unsigned char*)new[0], wc);
+	return (new[0]);
 }
 
 /*
@@ -64,16 +64,13 @@ FT_STR
 	encode_utf8_w(int *wc, size_t bytes)
 {
 	void	*utf;
-	uint8_t	*chr;
+	char	*chr;
 
 	utf = NULL;
-	chr = (uint8_t[7]){0, 0, 0, 0, 0, 0, 0};
-	while (wc[0])
-		if ((signed)(bytes - ft_strlen(utf) -
-				ft_strlen(chr = parse_utf8((wc++)[0], &chr)) > 0))
-			utf = ft_append(utf, chr, 1);
-		else
-			break ;
+	chr = (char[7]){0, 0, 0, 0, 0, 0, 0};
+	while (wc[0] && ((signed)(bytes - ft_strlen(utf) -
+				ft_strlen(chr = parse_utf8((wc++)[0], &chr)) > 0)))
+		utf = ft_append(utf, chr, 1);
 	return (utf);
 }
 
@@ -81,12 +78,11 @@ FT_STR
 	encode_utf8(int *wc)
 {
 	void	*utf;
+	char	*chr;
 
 	utf = NULL;
+	chr = (char[7]){0, 0, 0, 0, 0, 0, 0};
 	while (wc[0])
-		if (utf)
-			utf = ft_strjoin_free(utf, parse_utf8(*wc++));
-		else
-			utf = parse_utf8(*wc++);
+		utf = ft_append(utf, parse_utf8(*wc++, &chr), 1);
 	return (utf);
 }
