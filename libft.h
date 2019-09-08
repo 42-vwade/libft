@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/04 03:55:02 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/07 21:23:23 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,7 +153,7 @@ char			*ft_strjoin_free(char const *s1, char const *s2);
 
 FT_SIZE			ft_strlen(const char *s);
 int64_t			ft_wstrlen(wchar_t *s);
-FT_SIZE			ft_lstrlen(const int *s);
+FT_SIZE			ft_lstrlen(const wchar_t *s);
 FT_SIZE			ft_intlen(ull_t value);
 int64_t			ft_intlen_base(ull_t value, int base);
 int64_t			ft_lstlen(t_list *lst);
