@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 12:38:35 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/09 23:40:17 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/10 05:32:12 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 void
 	ft_strtolower(char **str)
 {
-	if (str && str[0])
-		while (*str[0])
-		{
-			str[0][0] = ft_tolower(str[0][0]);
-			str[0]++;
-		}
+	size_t	i;
+
+	if ((i = !(str && str[0])))
+		return ;
+	while (str[0][i])
+	{
+		if ('A' <= str[0][i] && str[0][i] <= 'Z')
+			str[0][i] += 32;
+		i++;
+	}
 }
