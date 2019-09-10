@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 15:41:29 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/07 17:45:43 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/09 22:46:54 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char
 		n = (n - (LL)n) * 10;
 		i += 1;
 	}
-	round_inf(dec, (char)NXT_DEC(n));
+	round_inf(dec, n);
 	return (dec);
 }
 
