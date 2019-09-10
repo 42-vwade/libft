@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/07 21:23:23 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/09 23:39:54 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ int				ft_isuppercase(char c);
 
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+int				ft_strtoupper(char **str);
+int				ft_strtolower(char **str);
 FT_VOID			*ft_memalloc(FT_SIZE size);
 FT_VOID			ft_memdel(FT_VOIDP *ap);
 
