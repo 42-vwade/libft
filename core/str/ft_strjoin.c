@@ -6,7 +6,11 @@
 /*   By: viwade <viwade@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 11:02:07 by viwade            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/09/02 21:35:02 by viwade           ###   ########.fr       */
+=======
+/*   Updated: 2019/09/07 02:08:22 by viwade           ###   ########.fr       */
+>>>>>>> 1dbfca54c5d33059f607eb000f6a726e2aa588f4
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +30,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 && !s2)
 		return (NULL);
+<<<<<<< HEAD
 	else if (!s2)
 		return (ft_strdup(s1));
 	else if (!s1)
+=======
+	if (!s2)
+		return (ft_strdup(s1));
+	if (!s1)
+>>>>>>> 1dbfca54c5d33059f607eb000f6a726e2aa588f4
 		return (ft_strdup(s2));
 	len = ft_strlen(s1) + ft_strlen(s2);
 	if ((new = (char *)malloc(sizeof(*new) * len + 1)))

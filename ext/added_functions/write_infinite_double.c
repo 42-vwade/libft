@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 15:41:29 by viwade            #+#    #+#             */
-/*   Updated: 2019/07/15 23:27:01 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/07 17:45:43 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,28 @@ static char
 static char
 	*get_decimal(
 		ld_t n,
-		ull_t p)
+		size_t p)
 {
 	char	*dec;
+	char	buf[2];
+	size_t	i;
 
+	i = 0;
+	buf[1] = 0;
 	while (n >= 1.0)
 		n = (n - (LL)n);
 	n = (n - (LL)n) * 10;
-	dec = ft_strdup((char[2]){ABS((int)(n)) + 48, 0});
-	while ((p -= !!p) && NXT_N(n))
-		dec = ft_strjoin_free(
-			dec,
-			ft_strdup((char[2]){ABS((int)(n)) + 48, 0}));
-	round_inf(dec, (char)ABS(NXT_DEC(n)));
+	dec = ft_memset(ft_strnew(p), 0, p);
+	while (i < p)
+	{
+		if ((LL)n)
+			ft_strcat(&dec[i], (char[2]){(LL)n + 48, 0});
+		else
+			ft_strcat(&dec[i], (char[2]){48, 0});
+		n = (n - (LL)n) * 10;
+		i += 1;
+	}
+	round_inf(dec, (char)NXT_DEC(n));
 	return (dec);
 }
 
@@ -72,7 +81,7 @@ FT_STR
 	char	*dec;
 	FT_NBR	nbr[1];
 
-	dec = p ? get_decimal(n, p) : NULL;
+	dec = p ? get_decimal(ABS(n), p) : NULL;
 	n += dec && (dec[0] == '0' && (char)NXT_DEC(n) == 9);
 	nbr[0].d = ft_itoa((LL)n);
 	if (p)

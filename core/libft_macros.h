@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 00:37:49 by viwade            #+#    #+#             */
-/*   Updated: 2019/08/02 11:57:28 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/05 21:02:13 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,18 @@
 # define LL	FT_LL
 # define ULL FT_ULL
 # define NBR t_num
+# define RET		return
+# define RETURN		return
+# define BREAK		break
+# define MATCH(a,b) if ((a)) b
+# define OR(a,b)	else if ((a)) b
+# define ELSE(a)	else a
+# define ANY2(x,a,b)		((x == a)||(x == b))
+# define ANY3(x,a,b,c)		((x == a)||(x == b)||(x == c))
+# define ANY4(x,a,b,c,d)	((x == a)||(x == b)||(x == c)||(x == d))
+# define ANY5(x,a,b,c,d,e)	((x == a)||(x == b)||(x == c)||(x == d)||(x == e))
+# define GROUP(x)	{x}
+# define LINE(x)	x;
 # define IF_C(c,t)		{if((c)){t;}}
 # define IF_E(c,a,b)	{if((c)){a;}else{b;}}
 # define _B(a, b)          {a;b;}
@@ -64,10 +76,12 @@
 # define _TD_D		typedef double	db_t
 # define _TD_LL		typedef long long	ll_t
 # define _TD_ULL	typedef unsigned long long	ull_t
+# define _TD_BSTR	typedef struct s_byte_string bstr_t
 
 _TD_LD;
 _TD_D;
 _TD_LL;
 _TD_ULL;
+_TD_BSTR;
 
 #endif

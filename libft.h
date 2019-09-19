@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/08/02 11:57:42 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/04 03:55:02 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 **		STANDARD OUTPUT
 */
 
-FT_VOID			ft_putchar(char c);
+FT_VOID			ft_putchar(int c);
 FT_VOID			ft_putchar_fd(char c, int fd);
 FT_VOID			ft_putwchar(unsigned int wc);
 FT_SIZE			write_utf8(unsigned int wc);
@@ -136,6 +136,7 @@ FT_VOID			ft_lstpush(t_list **list, t_list *new);
 FT_VOID			ft_lstpop(t_list **list);
 FT_VOID			**ft_lst2arr(t_list *lst);
 FT_VOID			ft_error(const char *message);
+char			*ft_append(const char *s1, const char *s2, int mode);
 char			*ft_strjoin_free(char const *s1, char const *s2);
 
 /*
