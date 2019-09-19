@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 02:48:54 by viwade            #+#    #+#             */
-/*   Updated: 2019/06/08 14:11:59 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/07 21:27:27 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 **	Integer string shall be null-terminated.
 */
 
-size_t	ft_lstrlen(const int *s)
+size_t	ft_lstrlen(const wchar_t *s)
 {
-	int	*e;
+	const char	*e;
 
-	e = (int *)s;
-	while (*(e += !!e[0]))
-		;
-	return ((e - s) / sizeof(int));
+	e = (const char *)s;
+	while (e[0] + e[1] + e[2] + e[3])
+		e += 4;
+	return ((e - (const char*)s) / sizeof(int));
 }
