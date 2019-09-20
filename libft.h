@@ -6,17 +6,19 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:34:03 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/10 04:44:04 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/19 19:10:24 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <stdarg.h>
 # include <math.h>
-# include "ext/get_next_line/get_next_line.h"
 # include "core/libft_macros.h"
 # include "core/libft_structs.h"
+# include "ext/get_next_line/get_next_line.h"
+# include "ext/ft_printf/ft_printf.h"
 
 /*
 **		STANDARD OUTPUT
