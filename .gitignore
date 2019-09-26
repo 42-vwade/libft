@@ -16,5 +16,6 @@ x.*
 *.tmp
 *.gch
 
+build/
 main.c
 .sub
