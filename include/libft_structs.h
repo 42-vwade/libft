@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 14:36:22 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/26 14:48:11 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/26 16:03:19 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ struct	s_node
 
 struct	s_stack
 {
-	struct s_node	*top;
+	const unsigned char	free;
+	struct s_node		*top;
 };
 
 struct	s_list

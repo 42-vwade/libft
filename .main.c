@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack.c                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/26 12:01:40 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/26 16:05:49 by viwade           ###   ########.fr       */
+/*   Created: 2019/09/19 19:01:06 by viwade            #+#    #+#             */
+/*   Updated: 2019/09/26 14:55:40 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_stack
-	*ft_stack(void)
+int	main(int n, char **v)
 {
-	t_stack	*new;
-
-	if (!(new = malloc(sizeof(t_stack))))
-		ft_error("ft_stack: failed to initialize");
-	*(unsigned char *)&new->free = ~0;
-	new->top = NULL;
-	return (new);
+	// ft_printf("%afuck %affs\n", 1, 2);
+	if (n >= 2 && v[1][0])
+	{
+		v[1][0] = 'b';
+		ft_printf("%s", v[1]);
+	}
+	else
+		ft_printf("%#afuck %#affs\n", "red", "blue");
 }

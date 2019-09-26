@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack.c                                         :+:      :+:    :+:   */
+/*   ft_stack_pop.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/26 12:01:40 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/26 16:05:49 by viwade           ###   ########.fr       */
+/*   Created: 2019/09/26 15:54:29 by viwade            #+#    #+#             */
+/*   Updated: 2019/09/26 16:55:27 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_stack
-	*ft_stack(void)
+void
+	*ft_stack_pop(t_stack *stack)
 {
-	t_stack	*new;
+	void	*content;
+	t_node	*node;
 
-	if (!(new = malloc(sizeof(t_stack))))
-		ft_error("ft_stack: failed to initialize");
-	*(unsigned char *)&new->free = ~0;
-	new->top = NULL;
-	return (new);
+	if (!stack || !stack->top)
+		return (0);
+	node = stack->top;
+	content = node->content;
+	stack->top = node->next;
+	free(node);
+	return (content);
 }
