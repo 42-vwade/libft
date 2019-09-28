@@ -17,5 +17,5 @@ x.*
 *.gch
 
 build/
-main.c
+test.c
 .sub
