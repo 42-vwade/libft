@@ -16,6 +16,14 @@ CFLAGS		:=	-c $(IFLAGS) -Wall -Werror -Wextra
 FLAGS		:=	$(IFLAGS) -Wall -Wextra
 FLAGS		:=	$(FLAGS) -Werror
 
+####	MACROS		########################################################
+
+MACROS		:=	_TD_LD
+# define _TD_D=typedef double	db_t
+# define _TD_LL=typedef long long	int64_t
+# define _TD_ULL=typedef unsigned long long	uint64_t
+# define _TD_BSTR=typedef struct s_byte_string bstr_t
+
 ####	DEBUGGING		########################################################
 
 FLAGS		:=	$(IFLAGS) -Wall -Wextra -g

@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/26 16:56:19 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/26 16:58:15 by viwade           ###   ########.fr       */
+/*   Updated: 2019/09/28 01:11:10 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,6 @@ void
 		return ;
 	while (stack->top)
 		ft_stack_pop(stack);
+	if (stack->free)
+		ft_memdel((void **)&stack);
 }

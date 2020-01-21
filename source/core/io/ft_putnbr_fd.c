@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 19:25:34 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/26 14:43:20 by viwade           ###   ########.fr       */
+/*   Updated: 2020/01/20 14:58:19 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void
 {
 	long	len;
 	long	tmp;
-	char	c;
 
 	tmp = n;
 	len = 1;
@@ -28,8 +27,7 @@ void
 		len *= 10;
 	while (len)
 	{
-		c = ABS(n) / len + 48;
-		write(fd, &c, 1);
+		write(fd, &"0123456789"[ABS(n / len)], 1);
 		n %= len;
 		len /= 10;
 	}

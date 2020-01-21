@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 06:01:13 by viwade            #+#    #+#             */
-/*   Updated: 2019/09/26 14:49:44 by viwade           ###   ########.fr       */
+/*   Updated: 2020/01/20 16:03:07 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,24 @@ int
 	parse_s(t_format *o)
 {
 	o->len = 0;
-	MATCH(ft_isuppercase(o->str[0]) || o->p.length > 8, o->p.length = l);
-	if ((o->v = va_arg(o->ap, void *)) == NULL)
-		o->v = "(null)";
+	((ft_isuppercase(o->str[0]) || o->p.length > 8) && (o->p.length = l));
+	((o->v = va_arg(o->ap, void *)) == NULL)
+	&& (o->v = "(null)");
 	return (convert_s(o));
 }
 
 int
 	parse_r(t_format *o)
 {
-	ull_t	c;
+	uint64_t	c;
 
 	o->len = 0;
 	o->error = 0;
 	if ((o->v = va_arg(o->ap, void *)) == NULL)
 		(o->v = "(null)")
 			&& (o->error = 1);
-	MATCH(!o->error && (ft_isuppercase(o->str[0]) || o->p.length > 8),
-		o->p.length = l);
+	(!o->error && (ft_isuppercase(o->str[0]) || o->p.length > 8))
+	&& (o->p.length = l);
 	if (!o->error && o->p.length == l && (o->len = -4))
 		while ((c = ((char*)o->v)[
 				o->len += 4]))
