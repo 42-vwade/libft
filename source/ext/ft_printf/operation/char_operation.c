@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 06:01:13 by viwade            #+#    #+#             */
-/*   Updated: 2020/01/20 16:03:54 by viwade           ###   ########.fr       */
+/*   Updated: 2020/01/21 13:11:26 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ int
 
 	o->v = &c;
 	((ft_isuppercase(o->str[0]) || o->p.length > 8) && (o->p.length = l));
-	if (!(o->str[0] == 'r' && ((c = *(uint64_t*)o->tmp) || 1)) || o->str[0] != '%')
+	if (!(o->str[0] == 'r' &&
+			((c = *(uint64_t*)o->tmp) || 1)) || o->str[0] != '%')
 		cast_o(o);
 	return (convert_c(o));
 }
