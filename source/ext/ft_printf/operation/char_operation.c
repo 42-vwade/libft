@@ -6,7 +6,7 @@
 /*   By: viwade <viwade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 06:01:13 by viwade            #+#    #+#             */
-/*   Updated: 2020/01/21 13:11:26 by viwade           ###   ########.fr       */
+/*   Updated: 2020/01/22 06:43:27 by viwade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static FT_SIZE
 	convert_c(t_format *o)
 {
 	((o->str[0] == '%') && (*(uint64_t*)o->v = '%'));
-	((o->p.length == l) && (o->v = encode_utf8((int[2]){*(int64_t *)o->v, 0})))
+	((o->p.length == l)
+	&& ((o->v = encode_utf8((int[2]){*(int64_t *)o->v, 0})) || 1))
 	|| (o->v = ft_strdup((char[2]){*(char *)o->v, 0}));
 	width_c(o);
 	append_s(o);
